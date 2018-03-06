@@ -1,0 +1,10 @@
+org\ocproject\service\LivreManager.class
+org\ocproject\service\OuvrageManager.class
+org\ocproject\service\UserManager.class
+org\ocproject\bibli\Apps.class
+org\ocproject\service\ManagerFactory.class
+org\ocproject\service\OuvrageManagerImpl.class
+org\ocproject\service\UserManagerImpl.class
+org\ocproject\service\Main.class
+org\ocproject\service\AbstractManager.class
+org\ocproject\service\LivreManagerImpl.class
