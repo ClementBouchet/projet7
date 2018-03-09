@@ -7,9 +7,9 @@ import org.ocproject.bibli.model.Ouvrage;
 import org.ocproject.dao.LivreDao;
 import org.ocproject.dao.OuvrageDao;
 
-public class OuvrageManagerImpl extends AbstractManager implements OuvrageManager{
+public class OuvrageManagerImpl extends AbstractManager {
 	
-	
+	/**
 	private LivreDao livreDao = getDaoFactory().getLivreDao();
 	private OuvrageDao ouvrageDao = getDaoFactory().getOuvrageDao();	
 	
@@ -64,5 +64,5 @@ public class OuvrageManagerImpl extends AbstractManager implements OuvrageManage
 			e.printStackTrace();
 		}
 	}
-	
+	*/
 }

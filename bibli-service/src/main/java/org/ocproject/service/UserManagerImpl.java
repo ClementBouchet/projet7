@@ -6,9 +6,9 @@ import org.ocproject.bibli.model.User;
 import org.ocproject.dao.DaoFactory;
 import org.ocproject.dao.UserDao;
 
-public class UserManagerImpl extends AbstractManager implements UserManager{
+public class UserManagerImpl extends AbstractManager {
 	
-
+/**
 	public void modifUser(User user) {
 		getDaoFactory().getUserDao().modifyUser(user);
 	}
@@ -81,5 +81,5 @@ public class UserManagerImpl extends AbstractManager implements UserManager{
 		
 		return userExists;
 	}
-
+*/
 }

@@ -14,6 +14,8 @@
   <groupId>org.ocproject.bibli</groupId>
   <artifactId>bibli-service</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
   
   <!-- === Informations Générales === -->
   <name>bibli-service</name>
