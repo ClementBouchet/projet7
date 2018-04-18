@@ -1,7 +1,7 @@
 package org.ocproject.service;
 
-//import org.ocproject.dao.DaoFactory;
-import org.ocproject.service.DaoFactory;
+import org.ocproject.dao.DaoFactory;
+
 
 public abstract class AbstractManager {
 	

@@ -1,6 +1,8 @@
 package org.ocproject.service;
 
-import org.ocproject.bibli.model.Ouvrage;
+import java.util.List;
+
+import org.ocproject.beans.Ouvrage;
 
 public interface OuvrageManager {
 	
@@ -10,6 +12,8 @@ public interface OuvrageManager {
 	
 	public Ouvrage readInfoLivre(int id);
 	
-	public void rendre(int id);
+	public List<Ouvrage> checkEmprunts();
+	
+	public void rendre(int id_ouvrage, int id_livre);
 
 }

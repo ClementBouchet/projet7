@@ -1,0 +1,166 @@
+
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+   <constant name = "struts.devMode" value = "true" />
+   
+   
+   <!-- ============== Actions Page d'accueil ================ -->
+   
+   <package name = "accueil" extends = "struts-default">
+        <default-action-ref name="booksearch" />
+        
+   		<action name="booksearch">
+   			<result>/BookSearch.jsp</result>
+   		</action>
+   		
+   		<action name="connexion">
+   			<result>connexion.jsp</result>
+   		</action>
+   		
+     	<action name ="pageInscription"
+   				class = "org.ocproject.actions.IndexAction"
+   				method = "pageInscription">
+   		<result>/Inscription.jsp</result>				
+   		</action>
+   
+      <action name = "hello" 
+         class = "org.ocproject.actions.IndexAction"
+         method = "execute">
+         <result name = "success">/HelloWorld.jsp</result>
+         <result name = "error">/AccessDenied.jsp</result>
+      </action>
+      
+      
+      <!-- ============== Actions Retour Page d'accueil ================ -->
+      
+      
+   </package>
+   <package name = "retour_acceuil" extends = "struts-default">
+   		<default-action-ref name="index" />
+   
+   		<action name="index">
+   			<result>index.jsp</result>
+   		</action>
+   </package>
+   
+   
+   <!-- ============== Actions sur Utilisateur ================ -->
+   
+   
+   <package name = "user" extends = "struts-default">
+   
+   		<global-results>
+            <result name="error">error.jsp</result>
+        </global-results>
+   
+   		<action name = "user_detail"
+   				class = "org.ocproject.actions.UserAction"
+   				method = "detailUser">
+   				
+   				<!--  <interceptor-ref name="store">
+        <param name="operationMode">RETRIEVE</param>
+    </interceptor-ref>
+    <interceptor-ref name="defaultStack" />-->
+   				
+   			<result name="success">detailUser.jsp</result>
+   			<result name = "error">error.jsp</result>
+   		</action>
+   
+   		<action name = "newuser"
+   				class= "org.ocproject.actions.UserAction"
+   				method = "createUser">
+   				
+   				<!--  <interceptor-ref name="store">
+        <param name="operationMode">RETRIEVE</param>
+    </interceptor-ref>
+    <interceptor-ref name="defaultStack" />-->
+   				
+   			<result name = "success" type = "redirectAction">
+   				<param name = "actionName">user_detail</param>
+   				<param name = "id">${user.id}</param>
+   				<!--  <param name = "user">${user}</param>-->
+   			</result>
+   			<result name = "error">error.jsp</result>
+   		</action>
+   		
+   		
+   		<action name = "connexionUser"
+   				class= "org.ocproject.actions.UserAction"
+   				method = "connexionUser">
+   				
+   				<!--  <interceptor-ref name="store">
+        <param name="operationMode">RETRIEVE</param>
+    </interceptor-ref>
+    <interceptor-ref name="defaultStack" />-->
+   				
+   			<result name = "success" type = "redirectAction">
+   				<param name = "actionName">user_detail</param>
+   				<param name = "id">${user.id}</param>
+   				<!--  <param name = "user">${user}</param>-->
+   			</result>
+   			<result name = "error">error.jsp</result>
+   		</action>
+   		
+   		<action name = "logout"
+   				class= "org.ocproject.actions.UserAction"
+   				method = "logout">
+   				<result name = "success">index.jsp</result>
+   		</action>
+   
+   </package>
+   
+   
+   <!-- ============== Actions sur les Livres et Ouvrages ================ -->
+   
+   
+   <package name = "livre" extends = "struts-default">
+   
+   
+   		<global-results>
+            <result name="error">error.jsp</result>
+        </global-results>
+        
+        <action name = "search_livre"
+        		class = "org.ocproject.actions.BookAction"
+        		method = "doSearchLivre">
+        	<result name = "input">BookSearch.jsp</result>	
+        	<result name = "success">search_result.jsp</result>
+        	<result name = "error">error.jsp</result>	
+        </action>
+   
+   		<action name ="list_livre"
+   				class = "org.ocproject.actions.BookAction"
+   				method = "doListLivre">
+   			<result>list_livre.jsp</result>
+   		</action>
+   		
+   		<action name = "detail_livre"
+   				class = "org.ocproject.actions.BookAction"
+   				method = "doDetailLivre">
+   			<result name = "success">detail_livre.jsp</result>		
+   		</action>
+   		<action name = "emprunter"
+   				class = "org.ocproject.actions.BookAction"
+   				method = "emprunter">
+   		<result name = "success" type = "redirectAction">
+   				<param name = "actionName">user_detail</param>
+   				<param name = "id">${#session.user.id}</param>
+   		</result>
+   		<result name = "error">error.jsp</result>		
+   		</action>
+   		<action name = "doRendre"
+   				class = "org.ocproject.actions.BookAction"
+   				method = "doRendre">
+   		<result name = "success" type = "redirectAction">
+   				<param name = "actionName">user_detail</param>
+   				<param name = "id">${#session.user.id}</param>
+   		</result>
+   		<result name = "error">error.jsp</result>		
+   		</action>
+   		
+   </package>
+   
+   </struts>

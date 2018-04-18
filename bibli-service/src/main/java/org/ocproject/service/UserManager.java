@@ -1,6 +1,6 @@
 package org.ocproject.service;
 
-import org.ocproject.bibli.model.User;
+import org.ocproject.beans.User;
 
 public interface UserManager {
 	
@@ -10,6 +10,6 @@ public interface UserManager {
 	
 	public User detailUser(String pseudo);
 	
-	public boolean createUser(User user);
+	public User createUser(String pseudo, String password, String email);
 
 }

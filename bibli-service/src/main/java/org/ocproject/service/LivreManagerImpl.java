@@ -8,38 +8,66 @@ import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-//import org.ocproject.dao.DaoFactory;
-//import org.ocproject.bibli.model.Livre;
-import org.ocproject.service.Livre;
-import org.ocproject.service.LivreDao;
-//import org.ocproject.dao.LivreDao;
-//import org.ocproject.dao.OuvrageDao;
+import org.ocproject.dao.DaoFactory;
+import org.ocproject.beans.Livre;
+import org.ocproject.dao.LivreDao;
+import org.ocproject.dao.OuvrageDao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @WebService(serviceName = "LivreManager")
 public class LivreManagerImpl extends AbstractManager{
-	
 		
-	//private LivreDao livreDao = getDaoFactory().getLivreDao();
-	//private OuvrageDao ouvrageDao = getDaoFactory().getOuvrageDao();
-
-	
-	/**
-	public void emprunter(int id, String date_emprunt, String date_retour) {
-		ouvrageDao.emprunter(id, date_emprunt, date_retour);
-		Livre livre = this.detailLivre(id);
-		int nb_restant = livre.getNb_restant();
+	@WebMethod
+	public Livre emprunterLivre(int id) {
+		
+		ApplicationContext context
+        = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+		DaoFactory.getDaoDriver();
+		LivreDao livreDao = getDaoFactory().getLivreDao();
+		ResultSet result = livreDao.detailLivre(context, id);
+		Livre livre = new Livre();
+		String titre = null;
+		String description = null;
+		String auteur = null;
+		String editeur = null;
+		int nb_exemplaire = 0;
+		int nb_restant = 0;
+		try {
+			while(result.next()) {
+		    titre = result.getString("titre");
+			description = result.getString("description");
+			auteur = result.getString("auteur");
+			editeur = result.getString("editeur");
+			nb_exemplaire = result.getInt("nb_exemplaire");
+			nb_restant = result.getInt("nb_restant");
+			
+			livre.setAuteur(auteur);
+			livre.setDescription(description);
+			livre.setEditeur(editeur);
+			livre.setId(id);
+			livre.setNb_exemplaire(nb_exemplaire);
+			livre.setNb_restant(nb_restant);
+			livre.setTitre(titre);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if(nb_restant > 0) {
 			nb_restant = nb_restant - 1;
 		}
-		livreDao.emprunter(id, nb_restant);
-		
+		livreDao.emprunter(context,id, nb_restant);
+		return livre;
 	}
 	
 	public List<Livre> afficherResultat(String search){
-		
-		ResultSet result = livreDao.rechercheLivre(search);
+		ApplicationContext context
+        = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+		DaoFactory daoFactory = context.getBean("daoFactory", DaoFactory.class);
+		DaoFactory.getDaoDriver();
+		LivreDao livreDao = getDaoFactory().getLivreDao();
+		ResultSet result = livreDao.rechercheLivre(context,search);
 	
 		List<Livre> livres = new ArrayList<Livre>();
 		int id = 0;
@@ -61,7 +89,7 @@ public class LivreManagerImpl extends AbstractManager{
 				livre.setDescription(description);
 				livre.setTitre(titre);
 				livre.setEditeur(editeur);
-				
+				livre.setId(id);
 				livres.add(livre);
 			}
 		} catch (SQLException e) {
@@ -69,15 +97,17 @@ public class LivreManagerImpl extends AbstractManager{
 			e.printStackTrace();
 		}
 		return livres;
-	} */
+	} 
+	
+	
 	@WebMethod	
 	public Livre detailLivre(int id){
-		ApplicationContext vApplicationContext
+		ApplicationContext context
         = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
 		
-		DaoFactory daoFactory = vApplicationContext.getBean("daoFactory", DaoFactory.class);
+		DaoFactory daoFactory = context.getBean("daoFactory", DaoFactory.class);
 		DaoFactory.getDaoDriver();
-		LivreDao livreDao = getDaoFactory().getLivreDao();
+		LivreDao livreDao = daoFactory.getLivreDao();
 		Livre livre = new Livre();
 		
 		String titre = null;
@@ -88,7 +118,7 @@ public class LivreManagerImpl extends AbstractManager{
 		int nb_restant = 0;
 		if(livreDao != null) {
 			livre.setDescription("Le livreDao est ok");
-		ResultSet result = livreDao.detailLivre(getDaoFactory(),id);
+		ResultSet result = livreDao.detailLivre(context,id);
 			if(result != null) {
 				livre.setAuteur("Le resultSet est ok");
 		try {
@@ -120,7 +150,7 @@ public class LivreManagerImpl extends AbstractManager{
 		}
 		return livre;
 	}
-
+	@WebMethod
 	public List<Livre> allBooks(){
 		List<Livre> livres = new ArrayList<Livre>();
 		int id = 0;
@@ -128,13 +158,13 @@ public class LivreManagerImpl extends AbstractManager{
 		String description = null;
 		String auteur = null;
 		String editeur = null;
-		ApplicationContext vApplicationContext
+		ApplicationContext context
         = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
 		
-		DaoFactory daoFactory = vApplicationContext.getBean("daoFactory", DaoFactory.class);
+		DaoFactory daoFactory = context.getBean("daoFactory", DaoFactory.class);
 		DaoFactory.getDaoDriver();
 		LivreDao livreDao = getDaoFactory().getLivreDao();
-		ResultSet result = livreDao.allBooks(getDaoFactory());
+		ResultSet result = livreDao.allBooks(context);
 		
 		try {
 			while (result.next()) {

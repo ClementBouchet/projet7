@@ -7,16 +7,16 @@
 
 <!-- ======= Déclaration des DAO ======== -->
 
-	<!--<bean id = "userDao" class = "org.ocproject.dao.UserDaoImpl"/>-->
-	<bean id = "livreDao" class = "org.ocproject.service.LivreDaoImpl"/>
-	<!--<bean id = "ouvrageDao" class = "org.ocproject.dao.OuvrageDaoImpl"/>-->
+	<bean id = "userDao" class = "org.ocproject.dao.UserDaoImpl"/>
+	<bean id = "livreDao" class = "org.ocproject.dao.LivreDaoImpl"/>
+	<bean id = "ouvrageDao" class = "org.ocproject.dao.OuvrageDaoImpl"/>
 
 <!-- ======= DAOFActory ======== -->
 
-	<bean id ="daoFactory" class = "org.ocproject.service.DaoFactory">
-		<!--<property name = "userDao" ref = "userDao"/>-->
+	<bean id ="daoFactory" class = "org.ocproject.dao.DaoFactory">
+		<property name = "userDao" ref = "userDao"/>
 		<property name = "livreDao" ref = "livreDao"/>
-		<!--<property name = "ouvrageDao" ref = "ouvrageDao"/>-->
+		<property name = "ouvrageDao" ref = "ouvrageDao"/>
 		<property name = "url" value = "jdbc:postgresql://localhost:5432/ma_base"/>
 		<property name = "username" value = "postgres"/>
 		<property name = "password" value = "elephant"/>
