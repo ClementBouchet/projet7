@@ -9,14 +9,14 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour detailUser complex type.
  * 
- * <p>Le fragment de schÃ©ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="detailUser">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,29 +31,21 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class DetailUser {
 
-    protected String arg0;
+    protected int arg0;
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg0.
+     * Obtient la valeur de la propriété arg0.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getArg0() {
+    public int getArg0() {
         return arg0;
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg0.
+     * Définit la valeur de la propriété arg0.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setArg0(String value) {
+    public void setArg0(int value) {
         this.arg0 = value;
     }
 

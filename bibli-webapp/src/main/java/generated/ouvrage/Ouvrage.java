@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour ouvrage complex type.
  * 
- * <p>Le fragment de schma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="ouvrage">
@@ -54,7 +54,7 @@ public class Ouvrage {
     protected boolean prolongement;
 
     /**
-     * Obtient la valeur de la proprit dateEmprunt.
+     * Obtient la valeur de la propriété dateEmprunt.
      * 
      * @return
      *     possible object is
@@ -66,7 +66,7 @@ public class Ouvrage {
     }
 
     /**
-     * Dfinit la valeur de la proprit dateEmprunt.
+     * Définit la valeur de la propriété dateEmprunt.
      * 
      * @param value
      *     allowed object is
@@ -78,7 +78,7 @@ public class Ouvrage {
     }
 
     /**
-     * Obtient la valeur de la proprit dateRetour.
+     * Obtient la valeur de la propriété dateRetour.
      * 
      * @return
      *     possible object is
@@ -90,7 +90,7 @@ public class Ouvrage {
     }
 
     /**
-     * Dfinit la valeur de la proprit dateRetour.
+     * Définit la valeur de la propriété dateRetour.
      * 
      * @param value
      *     allowed object is
@@ -102,7 +102,7 @@ public class Ouvrage {
     }
 
     /**
-     * Obtient la valeur de la proprit id.
+     * Obtient la valeur de la propriété id.
      * 
      */
     public int getId() {
@@ -110,7 +110,7 @@ public class Ouvrage {
     }
 
     /**
-     * Dfinit la valeur de la proprit id.
+     * Définit la valeur de la propriété id.
      * 
      */
     public void setId(int value) {
@@ -118,7 +118,7 @@ public class Ouvrage {
     }
 
     /**
-     * Obtient la valeur de la proprit idEmprunteur.
+     * Obtient la valeur de la propriété idEmprunteur.
      * 
      */
     public int getIdEmprunteur() {
@@ -126,7 +126,7 @@ public class Ouvrage {
     }
 
     /**
-     * Dfinit la valeur de la proprit idEmprunteur.
+     * Définit la valeur de la propriété idEmprunteur.
      * 
      */
     public void setIdEmprunteur(int value) {
@@ -134,7 +134,7 @@ public class Ouvrage {
     }
 
     /**
-     * Obtient la valeur de la proprit idLivre.
+     * Obtient la valeur de la propriété idLivre.
      * 
      */
     public int getIdLivre() {
@@ -142,7 +142,7 @@ public class Ouvrage {
     }
 
     /**
-     * Dfinit la valeur de la proprit idLivre.
+     * Définit la valeur de la propriété idLivre.
      * 
      */
     public void setIdLivre(int value) {
@@ -150,7 +150,7 @@ public class Ouvrage {
     }
 
     /**
-     * Obtient la valeur de la proprit prolongement.
+     * Obtient la valeur de la propriété prolongement.
      * 
      */
     public boolean isProlongement() {
@@ -158,7 +158,7 @@ public class Ouvrage {
     }
 
     /**
-     * Dfinit la valeur de la proprit prolongement.
+     * Définit la valeur de la propriété prolongement.
      * 
      */
     public void setProlongement(boolean value) {

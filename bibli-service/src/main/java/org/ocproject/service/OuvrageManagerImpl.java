@@ -3,6 +3,7 @@ package org.ocproject.service;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.jws.WebService;
@@ -19,13 +20,49 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class OuvrageManagerImpl extends AbstractManager {
 	
 	@WebMethod
-	public String prolonger(int id) {
+	public String prolonger(int id, int id_livre, int ide, String date_emprunt, String date_retour) {
 		
 		ApplicationContext context
         = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
 		DaoFactory.getDaoDriver();
 		OuvrageDao ouvrageDao = getDaoFactory().getOuvrageDao();
-		ouvrageDao.prolonger(context, id);
+		
+		String dateRetour = null;
+		int dayDao = 0;
+		int monthDao = 0;
+		int yearDao = 0;
+		
+				dayDao = Integer.parseInt(date_retour.substring(0, 2));
+				monthDao = Integer.parseInt(date_retour.substring(2, 4));
+				yearDao = Integer.parseInt(date_retour.substring(4, 8));
+				Calendar calDao = Calendar.getInstance();
+				calDao.set(yearDao, monthDao-1, dayDao);
+				calDao.add(Calendar.DAY_OF_MONTH, 15);
+				int newYear = calDao.get(Calendar.YEAR);
+				int month = calDao.get(Calendar.MONTH);
+				int newDay = calDao.get(Calendar.DAY_OF_MONTH);
+				int newMonth = month+1;
+				
+				String sMonth = null;String sDay = null;String sYear = null;
+				 
+				if(newMonth < 10) {
+					sMonth= "0"+((Integer)newMonth).toString();
+				}else {
+					sMonth= ((Integer)newMonth).toString();
+				}
+				
+				if(newDay < 10) {
+					sDay= "0"+((Integer)newDay).toString();
+				}else {
+					sDay= ((Integer)newDay).toString();
+				}
+				
+				sYear= ((Integer)newYear).toString();
+				
+				dateRetour = sDay+sMonth+sYear;
+		
+		ouvrageDao.prolonger(context, id, dateRetour);
+		//ouvrageDao.emprunter(context, id_livre, ide, date_emprunt, dateRetour);
 		String resultat = null;
 		
 		ResultSet result = ouvrageDao.select(context, id);
@@ -84,6 +121,9 @@ public class OuvrageManagerImpl extends AbstractManager {
 		String dateEmprunt = null;
 		String dateRetour = null;
 		Boolean prolong = false;
+		int dayDao = 0;
+		int monthDao = 0;
+		int yearDao = 0;
 		int id = 0;
 		int id_emprunteur = 0;
 		int id_livre = 0;
@@ -97,7 +137,57 @@ public class OuvrageManagerImpl extends AbstractManager {
 			while(result.next()) {
 				id = result.getInt("id");
 				dateEmprunt = result.getString("date_emprunt");
+				if(dateEmprunt!= null) {
+					dayDao = Integer.parseInt(dateEmprunt.substring(0, 2));
+					monthDao = Integer.parseInt(dateEmprunt.substring(2, 4));
+					yearDao = Integer.parseInt(dateEmprunt.substring(4, 8));
+					
+					String sMonth = null;String sDay = null;String sYear = null;
+					 
+					if(monthDao < 10) {
+						sMonth= "0"+((Integer)monthDao).toString();
+					}else {
+						sMonth= ((Integer)monthDao).toString();
+					}
+					
+					if(dayDao < 10) {
+						sDay= "0"+((Integer)dayDao).toString();
+					}else {
+						sDay= ((Integer)dayDao).toString();
+					}
+					
+					sYear= ((Integer)yearDao).toString();
+					
+					dateEmprunt = sDay+"/"+sMonth+"/"+sYear;
+					
+					//dateEmprunt = ((Integer)dayDao).toString()+"/"+((Integer)monthDao).toString()+"/"+((Integer)yearDao).toString();
+				}
 				dateRetour = result.getString("date_retour");
+				if( dateRetour != null) {
+					dayDao = Integer.parseInt(dateRetour.substring(0, 2));
+					monthDao = Integer.parseInt(dateRetour.substring(2, 4));
+					yearDao = Integer.parseInt(dateRetour.substring(4, 8));
+					
+					String sMonth = null;String sDay = null;String sYear = null;
+					 
+					if(monthDao < 10) {
+						sMonth= "0"+((Integer)monthDao).toString();
+					}else {
+						sMonth= ((Integer)monthDao).toString();
+					}
+					
+					if(dayDao < 10) {
+						sDay= "0"+((Integer)dayDao).toString();
+					}else {
+						sDay= ((Integer)dayDao).toString();
+					}
+					
+					sYear= ((Integer)yearDao).toString();
+					
+					dateRetour = sDay+"/"+sMonth+"/"+sYear;
+					
+					//dateRetour = ((Integer)dayDao).toString()+"/"+((Integer)monthDao).toString()+"/"+((Integer)yearDao).toString();
+				}
 				id_emprunteur = result.getInt("id_emprunteur");
 				prolong = result.getBoolean("prolongement");
 				id_livre = result.getInt("id_livre");
@@ -118,7 +208,7 @@ public class OuvrageManagerImpl extends AbstractManager {
 		return ouvrages;		
 	}
 	
-	//Seems useless for now
+	
 	public Ouvrage readInfoLivre(int id) {
 		ApplicationContext context
         = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");

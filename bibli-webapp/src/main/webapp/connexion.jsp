@@ -16,8 +16,8 @@
 <p>
 
 	<s:form action = "connexionUser">
-		<p>Pseudo : <s:textfield name ="user.pseudo" label = "Pseudo" requiredLabel = "true"/></p>
-		<p>Mot de passe : <s:password name ="user.password" label = "Mot de passe" requiredLabel = "true"/></p>
+		<p><s:textfield name ="user.pseudo" label = "Pseudo" requiredLabel = "true"/></p>
+		<p><s:password name ="user.password" label = "Mot de passe" requiredLabel = "true"/></p>
 		<s:submit value = "Connection"/>
 	</s:form>
 

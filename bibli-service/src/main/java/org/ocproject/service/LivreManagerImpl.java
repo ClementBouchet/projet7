@@ -150,6 +150,8 @@ public class LivreManagerImpl extends AbstractManager{
 		}
 		return livre;
 	}
+	
+	
 	@WebMethod
 	public List<Livre> allBooks(){
 		List<Livre> livres = new ArrayList<Livre>();

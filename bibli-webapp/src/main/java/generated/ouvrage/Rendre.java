@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour rendre complex type.
  * 
- * <p>Le fragment de schma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="rendre">
@@ -37,7 +37,7 @@ public class Rendre {
     protected int arg1;
 
     /**
-     * Obtient la valeur de la proprit arg0.
+     * Obtient la valeur de la propriété arg0.
      * 
      */
     public int getArg0() {
@@ -45,7 +45,7 @@ public class Rendre {
     }
 
     /**
-     * Dfinit la valeur de la proprit arg0.
+     * Définit la valeur de la propriété arg0.
      * 
      */
     public void setArg0(int value) {
@@ -53,7 +53,7 @@ public class Rendre {
     }
 
     /**
-     * Obtient la valeur de la proprit arg1.
+     * Obtient la valeur de la propriété arg1.
      * 
      */
     public int getArg1() {
@@ -61,7 +61,7 @@ public class Rendre {
     }
 
     /**
-     * Dfinit la valeur de la proprit arg1.
+     * Définit la valeur de la propriété arg1.
      * 
      */
     public void setArg1(int value) {

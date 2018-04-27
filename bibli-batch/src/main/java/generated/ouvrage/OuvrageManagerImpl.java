@@ -1,6 +1,7 @@
 
 package generated.ouvrage;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -26,28 +27,28 @@ public interface OuvrageManagerImpl {
 
     /**
      * 
-     * @param arg0
+     * @return
+     *     returns java.util.List<generated.ouvrage.Ouvrage>
      */
     @WebMethod
-    @RequestWrapper(localName = "prolonger", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.Prolonger")
-    @ResponseWrapper(localName = "prolongerResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ProlongerResponse")
-    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/prolongerRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/prolongerResponse")
-    public void prolonger(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "checkEmprunts", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.CheckEmprunts")
+    @ResponseWrapper(localName = "checkEmpruntsResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.CheckEmpruntsResponse")
+    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/checkEmpruntsRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/checkEmpruntsResponse")
+    public List<Ouvrage> checkEmprunts();
 
     /**
      * 
      * @param arg0
      * @return
-     *     returns generated.ouvrage.Ouvrage
+     *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "readInfoLivre", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoLivre")
-    @ResponseWrapper(localName = "readInfoLivreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoLivreResponse")
-    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/readInfoLivreRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/readInfoLivreResponse")
-    public Ouvrage readInfoLivre(
+    @RequestWrapper(localName = "prolonger", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.Prolonger")
+    @ResponseWrapper(localName = "prolongerResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ProlongerResponse")
+    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/prolongerRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/prolongerResponse")
+    public String prolonger(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 
@@ -68,19 +69,52 @@ public interface OuvrageManagerImpl {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns generated.ouvrage.Ouvrage
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "readInfoLivre", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoLivre")
+    @ResponseWrapper(localName = "readInfoLivreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoLivreResponse")
+    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/readInfoLivreRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/readInfoLivreResponse")
+    public Ouvrage readInfoLivre(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "rendre", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.Rendre")
+    @ResponseWrapper(localName = "rendreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.RendreResponse")
+    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/rendreRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/rendreResponse")
+    public int rendre(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
      * @param arg3
      * @param arg2
      * @param arg1
      * @param arg0
      * @return
-     *     returns java.lang.String
+     *     returns generated.ouvrage.Ouvrage
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "emprunterOuvrage", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.EmprunterOuvrage")
     @ResponseWrapper(localName = "emprunterOuvrageResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.EmprunterOuvrageResponse")
     @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/emprunterOuvrageRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/emprunterOuvrageResponse")
-    public String emprunterOuvrage(
+    public Ouvrage emprunterOuvrage(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
@@ -89,17 +123,5 @@ public interface OuvrageManagerImpl {
         String arg2,
         @WebParam(name = "arg3", targetNamespace = "")
         String arg3);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "rendre", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.Rendre")
-    @ResponseWrapper(localName = "rendreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.RendreResponse")
-    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/rendreRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/rendreResponse")
-    public void rendre(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
 
 }

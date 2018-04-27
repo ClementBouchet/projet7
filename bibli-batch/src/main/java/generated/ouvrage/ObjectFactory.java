@@ -31,7 +31,9 @@ public class ObjectFactory {
     private final static QName _ProlongerResponse_QNAME = new QName("http://service.ocproject.org/", "prolongerResponse");
     private final static QName _ReadInfoLivreResponse_QNAME = new QName("http://service.ocproject.org/", "readInfoLivreResponse");
     private final static QName _Prolonger_QNAME = new QName("http://service.ocproject.org/", "prolonger");
+    private final static QName _CheckEmprunts_QNAME = new QName("http://service.ocproject.org/", "checkEmprunts");
     private final static QName _EmprunterOuvrage_QNAME = new QName("http://service.ocproject.org/", "emprunterOuvrage");
+    private final static QName _CheckEmpruntsResponse_QNAME = new QName("http://service.ocproject.org/", "checkEmpruntsResponse");
     private final static QName _RendreResponse_QNAME = new QName("http://service.ocproject.org/", "rendreResponse");
     private final static QName _ReadInfoLivre_QNAME = new QName("http://service.ocproject.org/", "readInfoLivre");
 
@@ -107,11 +109,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CheckEmpruntsResponse }
+     * 
+     */
+    public CheckEmpruntsResponse createCheckEmpruntsResponse() {
+        return new CheckEmpruntsResponse();
+    }
+
+    /**
      * Create an instance of {@link ReadInfoLivre }
      * 
      */
     public ReadInfoLivre createReadInfoLivre() {
         return new ReadInfoLivre();
+    }
+
+    /**
+     * Create an instance of {@link CheckEmprunts }
+     * 
+     */
+    public CheckEmprunts createCheckEmprunts() {
+        return new CheckEmprunts();
     }
 
     /**
@@ -194,12 +212,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CheckEmprunts }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.ocproject.org/", name = "checkEmprunts")
+    public JAXBElement<CheckEmprunts> createCheckEmprunts(CheckEmprunts value) {
+        return new JAXBElement<CheckEmprunts>(_CheckEmprunts_QNAME, CheckEmprunts.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link EmprunterOuvrage }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://service.ocproject.org/", name = "emprunterOuvrage")
     public JAXBElement<EmprunterOuvrage> createEmprunterOuvrage(EmprunterOuvrage value) {
         return new JAXBElement<EmprunterOuvrage>(_EmprunterOuvrage_QNAME, EmprunterOuvrage.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CheckEmpruntsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.ocproject.org/", name = "checkEmpruntsResponse")
+    public JAXBElement<CheckEmpruntsResponse> createCheckEmpruntsResponse(CheckEmpruntsResponse value) {
+        return new JAXBElement<CheckEmpruntsResponse>(_CheckEmpruntsResponse_QNAME, CheckEmpruntsResponse.class, null, value);
     }
 
     /**

@@ -56,16 +56,17 @@ public class OuvrageDaoImpl implements OuvrageDao{
 			return result;
 		}
 	
-	public void prolonger(ApplicationContext context,int id) {
+	public void prolonger(ApplicationContext context,int id, String date_retour) {
 		Connection connexion;
 		PreparedStatement prepStmt;
 		daoFactory = context.getBean("daoFactory", DaoFactory.class);
-		String sql = "UPDATE ouvrage SET prolongement = true WHERE id = ?;";
+		String sql = "UPDATE ouvrage SET prolongement = true, date_retour = ? WHERE id = ?;";
 		
 		try {
 			connexion = daoFactory.getConnection();
 			prepStmt = connexion.prepareStatement(sql);
-			prepStmt.setInt(1, id);
+			prepStmt.setString(1, date_retour);
+			prepStmt.setInt(2, id);
 			prepStmt.executeUpdate();						
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

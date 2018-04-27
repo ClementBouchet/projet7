@@ -5,6 +5,10 @@
 
 <struts>
    <constant name = "struts.devMode" value = "true" />
+   
+   
+   <!-- ============== Actions Page d'accueil ================ -->
+   
    <package name = "accueil" extends = "struts-default">
         <default-action-ref name="booksearch" />
         
@@ -29,6 +33,10 @@
          <result name = "error">/AccessDenied.jsp</result>
       </action>
       
+      
+      <!-- ============== Actions Retour Page d'accueil ================ -->
+      
+      
    </package>
    <package name = "retour_acceuil" extends = "struts-default">
    		<default-action-ref name="index" />
@@ -37,6 +45,10 @@
    			<result>index.jsp</result>
    		</action>
    </package>
+   
+   
+   <!-- ============== Actions sur Utilisateur ================ -->
+   
    
    <package name = "user" extends = "struts-default">
    
@@ -100,12 +112,17 @@
    
    </package>
    
+   
+   <!-- ============== Actions sur les Livres et Ouvrages ================ -->
+   
+   
    <package name = "livre" extends = "struts-default">
    
    
    		<global-results>
             <result name="error">error.jsp</result>
         </global-results>
+        
         
         <action name = "search_livre"
         		class = "org.ocproject.actions.BookAction"
@@ -121,29 +138,45 @@
    			<result>list_livre.jsp</result>
    		</action>
    		
+   		
    		<action name = "detail_livre"
    				class = "org.ocproject.actions.BookAction"
    				method = "doDetailLivre">
    			<result name = "success">detail_livre.jsp</result>		
    		</action>
+   		
+   		
    		<action name = "emprunter"
    				class = "org.ocproject.actions.BookAction"
    				method = "emprunter">
-   		<result name = "success" type = "redirectAction">
+   			<result name = "success" type = "redirectAction">
    				<param name = "actionName">user_detail</param>
    				<param name = "id">${#session.user.id}</param>
-   		</result>
-   		<result name = "error">error.jsp</result>		
+   			</result>
+   			<result name = "error">error.jsp</result>		
    		</action>
+   		
+   		
    		<action name = "doRendre"
    				class = "org.ocproject.actions.BookAction"
    				method = "doRendre">
-   		<result name = "success" type = "redirectAction">
+   			<result name = "success" type = "redirectAction">
    				<param name = "actionName">user_detail</param>
    				<param name = "id">${#session.user.id}</param>
-   		</result>
-   		<result name = "error">error.jsp</result>		
+   			</result>
+   			<result name = "error">error.jsp</result>		
    		</action>
+   		
+   		<action name = "doProlonger"
+   				class = "org.ocproject.actions.BookAction"
+   				method = "doProlonger">
+   			<result name = "success" type = "redirectAction">
+   				<param name = "actionName">user_detail</param>
+   				<param name = "id">${#session.user.id}</param>
+   			</result>
+   			<result name = "error">error.jsp</result>		
+   		</action>
+   		
    		
    </package>
    

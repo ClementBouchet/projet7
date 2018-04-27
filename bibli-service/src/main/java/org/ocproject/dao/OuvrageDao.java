@@ -9,7 +9,7 @@ public interface OuvrageDao {
 	
 	//public void emprunter(ApplicationContext context,int id, String date_emprunt, String date_retour);
 	
-	public void prolonger(ApplicationContext context, int id);
+	public void prolonger(ApplicationContext context, int id, String date_retour);
 	
 	public ResultSet readInfoUser(ApplicationContext context,int id);
 

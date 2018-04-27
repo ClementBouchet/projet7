@@ -13,9 +13,9 @@
 	<p>
 	<s:a action = "logout">Déconnection</s:a></p>
 	
-		<p>Pseudo : <s:property value = "user.pseudo"/></p>
+		<p><strong>Pseudo</strong> : <s:property value = "user.pseudo"/></p>
 		<!-- <p>Mot de Passe : <s:property value = "user.password"/></p>-->
-		<p>Email : <s:property value = "user.email"/></p>
+		<p><strong>Email</strong>  : <s:property value = "user.email"/></p>
 	<p>
 	
 	<p>
@@ -25,26 +25,43 @@
 		<s:if test="user.id == idEmprunteur">
 			<li>
 			<ul>
-				<li>
+				<!--  <li>
 				- id :
 				<s:property value = "id"/>
-				</li>
+				</li>-->
 				<li>
+				- <strong>Livre</strong> : 
+				<s:iterator value = "livres">
+					<!--<s:if test="id == idLivre">-->
+						<s:property value = "titre"/>
+					<!--</s:if>-->
+				</s:iterator>
+				</li>
+				<!--  <li>
 				- idLivre : 
 				<s:property value = "idLivre"/>
-				</li>
+				</li>-->
 				<li>
-				- date d'emprunt :
+				- <strong>Date d'emprunt</strong> :
 				<s:property value = "dateEmprunt"/>
 				</li>
 				<li>
-				-date de retour :
+				-<strong> Date de retour</strong> :
 				<s:property value = "dateRetour"/>
 				<s:a action = "doRendre">
 					<s:param name = "id_ouvrage" value = "id"></s:param>
 					<s:param name = "id_livre" value = "idLivre"></s:param>
 					Rendre
 				</s:a>
+				<s:if test="prolongement == false">
+					<s:a action = "doProlonger">
+						<s:param name = "id_ouvrage" value = "id"></s:param>
+						<s:param name = "id_livre" value = "idLivre"></s:param>
+						<s:param name = "id" value = "user.id"></s:param>
+						Prolonger
+					</s:a>
+				</s:if>
+				<p></p>
 				</li>
 			</ul>
 			</li>

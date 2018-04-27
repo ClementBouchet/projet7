@@ -10,14 +10,14 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour emprunterOuvrageResponse complex type.
  * 
- * <p>Le fragment de schÃ©ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="emprunterOuvrageResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://service.ocproject.org/}ouvrage" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -33,29 +33,29 @@ import javax.xml.bind.annotation.XmlType;
 public class EmprunterOuvrageResponse {
 
     @XmlElement(name = "return")
-    protected String _return;
+    protected Ouvrage _return;
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© return.
+     * Obtient la valeur de la propriété return.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Ouvrage }
      *     
      */
-    public String getReturn() {
+    public Ouvrage getReturn() {
         return _return;
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© return.
+     * Définit la valeur de la propriété return.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Ouvrage }
      *     
      */
-    public void setReturn(String value) {
+    public void setReturn(Ouvrage value) {
         this._return = value;
     }
 

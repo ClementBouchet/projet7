@@ -123,6 +123,7 @@
             <result name="error">error.jsp</result>
         </global-results>
         
+        
         <action name = "search_livre"
         		class = "org.ocproject.actions.BookAction"
         		method = "doSearchLivre">
@@ -137,29 +138,45 @@
    			<result>list_livre.jsp</result>
    		</action>
    		
+   		
    		<action name = "detail_livre"
    				class = "org.ocproject.actions.BookAction"
    				method = "doDetailLivre">
    			<result name = "success">detail_livre.jsp</result>		
    		</action>
+   		
+   		
    		<action name = "emprunter"
    				class = "org.ocproject.actions.BookAction"
    				method = "emprunter">
-   		<result name = "success" type = "redirectAction">
+   			<result name = "success" type = "redirectAction">
    				<param name = "actionName">user_detail</param>
    				<param name = "id">${#session.user.id}</param>
-   		</result>
-   		<result name = "error">error.jsp</result>		
+   			</result>
+   			<result name = "error">error.jsp</result>		
    		</action>
+   		
+   		
    		<action name = "doRendre"
    				class = "org.ocproject.actions.BookAction"
    				method = "doRendre">
-   		<result name = "success" type = "redirectAction">
+   			<result name = "success" type = "redirectAction">
    				<param name = "actionName">user_detail</param>
    				<param name = "id">${#session.user.id}</param>
-   		</result>
-   		<result name = "error">error.jsp</result>		
+   			</result>
+   			<result name = "error">error.jsp</result>		
    		</action>
+   		
+   		<action name = "doProlonger"
+   				class = "org.ocproject.actions.BookAction"
+   				method = "doProlonger">
+   			<result name = "success" type = "redirectAction">
+   				<param name = "actionName">user_detail</param>
+   				<param name = "id">${#session.user.id}</param>
+   			</result>
+   			<result name = "error">error.jsp</result>		
+   		</action>
+   		
    		
    </package>
    

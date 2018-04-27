@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour emprunterOuvrage complex type.
  * 
- * <p>Le fragment de schÃ©ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="emprunterOuvrage">
@@ -43,7 +43,7 @@ public class EmprunterOuvrage {
     protected String arg3;
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg0.
+     * Obtient la valeur de la propriété arg0.
      * 
      */
     public int getArg0() {
@@ -51,7 +51,7 @@ public class EmprunterOuvrage {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg0.
+     * Définit la valeur de la propriété arg0.
      * 
      */
     public void setArg0(int value) {
@@ -59,7 +59,7 @@ public class EmprunterOuvrage {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg1.
+     * Obtient la valeur de la propriété arg1.
      * 
      */
     public int getArg1() {
@@ -67,7 +67,7 @@ public class EmprunterOuvrage {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg1.
+     * Définit la valeur de la propriété arg1.
      * 
      */
     public void setArg1(int value) {
@@ -75,7 +75,7 @@ public class EmprunterOuvrage {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg2.
+     * Obtient la valeur de la propriété arg2.
      * 
      * @return
      *     possible object is
@@ -87,7 +87,7 @@ public class EmprunterOuvrage {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg2.
+     * Définit la valeur de la propriété arg2.
      * 
      * @param value
      *     allowed object is
@@ -99,7 +99,7 @@ public class EmprunterOuvrage {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg3.
+     * Obtient la valeur de la propriété arg3.
      * 
      * @return
      *     possible object is
@@ -111,7 +111,7 @@ public class EmprunterOuvrage {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg3.
+     * Définit la valeur de la propriété arg3.
      * 
      * @param value
      *     allowed object is

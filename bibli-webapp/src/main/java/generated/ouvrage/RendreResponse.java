@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour rendreResponse complex type.
  * 
- * <p>Le fragment de schma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="rendreResponse">
@@ -36,7 +36,7 @@ public class RendreResponse {
     protected int _return;
 
     /**
-     * Obtient la valeur de la proprit return.
+     * Obtient la valeur de la propriété return.
      * 
      */
     public int getReturn() {
@@ -44,7 +44,7 @@ public class RendreResponse {
     }
 
     /**
-     * Dfinit la valeur de la proprit return.
+     * Définit la valeur de la propriété return.
      * 
      */
     public void setReturn(int value) {
