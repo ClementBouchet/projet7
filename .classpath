@@ -3,14 +3,12 @@
 	<classpathentry kind="src" path="bibli-webapp/src/main/java"/>
 	<classpathentry kind="src" path="bibli-db/src/main/java"/>
 	<classpathentry kind="src" path="bibli-service/src/main/java"/>
-	<classpathentry kind="src" path="bibli-model/src/main/java"/>
 	<classpathentry kind="src" path="bibli-batch/src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/clbouche/apache-tomcat-8.5.23/lib/servlet-api.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5"/>
 	<classpathentry kind="output" path="target/classes"/>

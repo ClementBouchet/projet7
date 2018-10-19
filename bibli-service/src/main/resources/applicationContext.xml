@@ -10,6 +10,7 @@
 	<bean id = "userDao" class = "org.ocproject.dao.UserDaoImpl"/>
 	<bean id = "livreDao" class = "org.ocproject.dao.LivreDaoImpl"/>
 	<bean id = "ouvrageDao" class = "org.ocproject.dao.OuvrageDaoImpl"/>
+	<bean id = "reservationDao" class = "org.ocproject.dao.ReservationDaoImpl"/>
 
 <!-- ======= DAOFActory ======== -->
 
@@ -17,7 +18,8 @@
 		<property name = "userDao" ref = "userDao"/>
 		<property name = "livreDao" ref = "livreDao"/>
 		<property name = "ouvrageDao" ref = "ouvrageDao"/>
-		<property name = "url" value = "jdbc:postgresql://localhost:5432/ma_base"/>
+		<property name = "reservationDao" ref = "reservationDao"/>
+		<property name = "url" value = "jdbc:postgresql://localhost:5432/projet7"/>
 		<property name = "username" value = "postgres"/>
 		<property name = "password" value = "elephant"/>
 		<property name = "driver" value = "org.postgresql.Driver"/>

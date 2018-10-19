@@ -30,7 +30,7 @@ public class OuvrageManager
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://lfr014449:8080/bibli-service-16660710278770111829.0-SNAPSHOT/OuvrageManager?wsdl");
+            url = new URL("http://clem:8080/bibli-service2303077902176825818/OuvrageManager?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

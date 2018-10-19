@@ -1,6 +1,7 @@
 org\ocproject\dao\OuvrageDao.class
 org\ocproject\dao\UserDao.class
 org\ocproject\dao\LivreDao.class
+org\ocproject\dao\User.class
 org\ocproject\dao\UserDaoImpl.class
 org\ocproject\dao\LivreDaoImpl.class
 org\ocproject\dao\OuvrageDaoImpl.class

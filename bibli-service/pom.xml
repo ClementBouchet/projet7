@@ -24,7 +24,9 @@
   <!-- === Propiétés === -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
   </properties>
+
   
   <!-- === Dépendances === -->
   <dependencies>
@@ -43,6 +45,10 @@
     	<groupId>postgresql</groupId>
     	<artifactId>postgresql</artifactId>
     </dependency>
+    <dependency>
+    	<groupId>javax.servlet</groupId>
+    	<artifactId>javax.servlet-api</artifactId>
+    </dependency>
     <!--  <dependency>
     	<groupId>org.ocproject.bibli</groupId>
     	<artifactId>bibli-db</artifactId>
@@ -56,11 +62,16 @@
   </dependencies>
   
   <build>
+  <finalName>bibli-service</finalName>
   
   <plugins>
     <plugin>
   			<groupId>org.apache.maven.plugins</groupId>
         	<artifactId>maven-compiler-plugin</artifactId>
+    </plugin>
+    <plugin>
+        	<groupId>org.codehaus.mojo</groupId>
+       	 	<artifactId>tomcat-maven-plugin</artifactId>
     </plugin>
     <!-- <plugin>
         <groupId>org.apache.tomcat.maven</groupId>

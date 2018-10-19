@@ -10,6 +10,7 @@ public class DaoFactory {
 	public UserDao userDao;
 	public LivreDao livreDao;
 	public OuvrageDao ouvrageDao;
+	public ReservationDao reservationDao;
 	/**
 	static ResourceBundle bundle = ResourceBundle.getBundle("sql.properties");
 	
@@ -102,6 +103,14 @@ public class DaoFactory {
 	
 	public void setOuvrageDao(OuvrageDao oOuvrageDao ) {
 		this.ouvrageDao = oOuvrageDao;
+	}
+	
+	public ReservationDao getReservationDao() {
+		return reservationDao;
+	}
+	
+	public void setOuvrageDao(ReservationDao rReservationDao ) {
+		this.reservationDao = rReservationDao;
 	}
 
 }
