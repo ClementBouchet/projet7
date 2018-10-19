@@ -1,6 +1,5 @@
 package org.ocproject.beans;
 
-import java.util.Date;
 
 public class Reservation {
 
@@ -8,8 +7,8 @@ public class Reservation {
 	public int idUser;
 	public int idLivre;
 	public int ordre;
-	public Date dateDispo;
-	public Date dateRetourPrevu;
+	public String dateDispo;
+	public String dateRetourPrevu;
 	
 	public int getId() {
 		return id;
@@ -17,17 +16,17 @@ public class Reservation {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getId_user() {
-		return id_user;
+	public int getIdUser() {
+		return idUser;
 	}
-	public void setId_user(int id_user) {
-		this.id_user = id_user;
+	public void setIdUser(int id_user) {
+		this.idUser = id_user;
 	}
-	public int getId_livre() {
-		return id_livre;
+	public int getIdLivre() {
+		return idLivre;
 	}
-	public void setId_livre(int id_livre) {
-		this.id_livre = id_livre;
+	public void setIdLivre(int id_livre) {
+		this.idLivre = id_livre;
 	}
 	public int getOrdre() {
 		return ordre;
@@ -35,16 +34,16 @@ public class Reservation {
 	public void setOrdre(int ordre) {
 		this.ordre = ordre;
 	}
-	public Date getDateDispo() {
+	public String getDateDispo() {
 		return dateDispo;
 	}
-	public void setDateDispo(Date dateDispo) {
+	public void setDateDispo(String dateDispo) {
 		this.dateDispo = dateDispo;
 	}
-	public Date getDateRetourPrevu() {
+	public String getDateRetourPrevu() {
 		return dateRetourPrevu;
 	}
-	public void setDateRetourPrevu(Date dateRetourPrevu) {
+	public void setDateRetourPrevu(String dateRetourPrevu) {
 		this.dateRetourPrevu = dateRetourPrevu;
 	}
 	
