@@ -3,12 +3,12 @@ package org.ocproject.beans;
 
 public class Reservation {
 
-	public int id;
-	public int idUser;
-	public int idLivre;
-	public int ordre;
-	public String dateDispo;
-	public String dateRetourPrevu;
+	int id;
+	int idUser;
+	int idLivre;
+	int ordre;
+	String dateDispo;
+	String dateRetourPrevu;
 	
 	public int getId() {
 		return id;
@@ -19,14 +19,14 @@ public class Reservation {
 	public int getIdUser() {
 		return idUser;
 	}
-	public void setIdUser(int id_user) {
-		this.idUser = id_user;
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
 	}
 	public int getIdLivre() {
 		return idLivre;
 	}
-	public void setIdLivre(int id_livre) {
-		this.idLivre = id_livre;
+	public void setIdLivre(int idLivre) {
+		this.idLivre = idLivre;
 	}
 	public int getOrdre() {
 		return ordre;
@@ -46,5 +46,5 @@ public class Reservation {
 	public void setDateRetourPrevu(String dateRetourPrevu) {
 		this.dateRetourPrevu = dateRetourPrevu;
 	}
-	
+		
 }

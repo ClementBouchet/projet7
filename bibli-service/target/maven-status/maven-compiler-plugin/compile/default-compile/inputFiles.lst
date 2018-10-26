@@ -5,11 +5,16 @@ C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\o
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\dao\LivreDao.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\dao\LivreDaoImpl.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\service\ManagerFactory.java
+C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\beans\Reservation.java
+C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\dao\ReservationDao.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\service\OuvrageManager.java
+C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\service\ReservationManagerImpl.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\service\UserManagerImpl.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\dao\OuvrageDaoImpl.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\service\OuvrageManagerImpl.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\service\AbstractManager.java
+C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\dao\ReservationDaoImpl.java
+C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\service\ReservationManager.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\dao\UserDao.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\beans\User.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-service\src\main\java\org\ocproject\dao\UserDaoImpl.java

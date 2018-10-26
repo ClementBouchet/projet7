@@ -108,7 +108,7 @@ public class ReservationDaoImpl implements ReservationDao{
 			connexion = daoFactory.getConnection();
 			prepStmt = connexion.prepareStatement(req, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			prepStmt.setInt(1, id);
-			prepStmt.setInt(1, ordre);
+			prepStmt.setInt(1, ordre); 
 			prepStmt.executeUpdate();
 			prepStmt = connexion.prepareStatement(req2, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			prepStmt.setInt(1, ordre);
