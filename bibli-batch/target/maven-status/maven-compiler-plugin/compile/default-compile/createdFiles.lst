@@ -1,4 +1,5 @@
 generated\livre\DetailLivre.class
+org\ocproject\batch\Email.class
 generated\reservation\AnnulerReservation.class
 generated\user\CreateUser.class
 generated\reservation\AnnulerReservationResponse.class
@@ -14,6 +15,7 @@ generated\reservation\SelectAllResponse.class
 generated\user\package-info.class
 generated\ouvrage\EmprunterOuvrage.class
 generated\reservation\SelectByIdUser.class
+org\ocproject\batch\Email$1.class
 generated\ouvrage\OuvrageManager.class
 generated\reservation\SelectByIdUserResponse.class
 generated\user\ConnectUserResponse.class
