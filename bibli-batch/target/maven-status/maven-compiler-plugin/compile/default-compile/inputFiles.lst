@@ -19,6 +19,7 @@ C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\gen
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\ouvrage\Rendre.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\user\User.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\user\ObjectFactory.java
+C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\org\ocproject\batch\Tasks.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\reservation\SelectAll.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\org\ocproject\beans\Ouvrage.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\ouvrage\CheckEmprunts.java
@@ -33,6 +34,7 @@ C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\gen
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\ouvrage\EmprunterOuvrage.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\livre\AfficherResultat.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\livre\DetailLivreResponse.java
+C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\reservation\ManageCurrentDate.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\user\DetailUserResponse.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\ouvrage\ObjectFactory.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\user\ConnectUserResponse.java
@@ -56,6 +58,7 @@ C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\org
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\livre\EmprunterLivreResponse.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\ouvrage\ReadInfoLivre.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\user\package-info.java
+C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\reservation\ManageCurrentDateResponse.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\reservation\SelectByIdLivreResponse.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\reservation\Reserver.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-batch\src\main\java\generated\reservation\SelectAllResponse.java

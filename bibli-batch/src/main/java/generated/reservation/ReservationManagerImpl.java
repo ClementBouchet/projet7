@@ -27,6 +27,21 @@ public interface ReservationManagerImpl {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<generated.reservation.Reservation>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "selectByIdLivre", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdLivre")
+    @ResponseWrapper(localName = "selectByIdLivreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdLivreResponse")
+    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/selectByIdLivreRequest", output = "http://service.ocproject.org/ReservationManagerImpl/selectByIdLivreResponse")
+    public List<Reservation> selectByIdLivre(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
      * @return
      *     returns java.util.List<generated.reservation.Reservation>
      */
@@ -36,21 +51,6 @@ public interface ReservationManagerImpl {
     @ResponseWrapper(localName = "selectAllResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectAllResponse")
     @Action(input = "http://service.ocproject.org/ReservationManagerImpl/selectAllRequest", output = "http://service.ocproject.org/ReservationManagerImpl/selectAllResponse")
     public List<Reservation> selectAll();
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "annulerReservation", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.AnnulerReservation")
-    @ResponseWrapper(localName = "annulerReservationResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.AnnulerReservationResponse")
-    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/annulerReservationRequest", output = "http://service.ocproject.org/ReservationManagerImpl/annulerReservationResponse")
-    public void annulerReservation(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
 
     /**
      * 
@@ -85,16 +85,28 @@ public interface ReservationManagerImpl {
     /**
      * 
      * @param arg0
-     * @return
-     *     returns java.util.List<generated.reservation.Reservation>
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "selectByIdLivre", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdLivre")
-    @ResponseWrapper(localName = "selectByIdLivreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdLivreResponse")
-    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/selectByIdLivreRequest", output = "http://service.ocproject.org/ReservationManagerImpl/selectByIdLivreResponse")
-    public List<Reservation> selectByIdLivre(
+    @RequestWrapper(localName = "manageCurrentDate", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.ManageCurrentDate")
+    @ResponseWrapper(localName = "manageCurrentDateResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.ManageCurrentDateResponse")
+    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/manageCurrentDateRequest", output = "http://service.ocproject.org/ReservationManagerImpl/manageCurrentDateResponse")
+    public void manageCurrentDate(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "annulerReservation", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.AnnulerReservation")
+    @ResponseWrapper(localName = "annulerReservationResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.AnnulerReservationResponse")
+    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/annulerReservationRequest", output = "http://service.ocproject.org/ReservationManagerImpl/annulerReservationResponse")
+    public void annulerReservation(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
 
 }

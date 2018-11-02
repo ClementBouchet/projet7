@@ -47,7 +47,10 @@ generated\reservation\SelectAll.class
 generated\reservation\SelectByIdLivreResponse.class
 generated\reservation\ReserverResponse.class
 generated\livre\LivreManager.class
+generated\reservation\ManageCurrentDate.class
+generated\reservation\ManageCurrentDateResponse.class
 generated\user\ModifUser.class
+org\ocproject\batch\Tasks.class
 generated\reservation\ReservationManagerImpl.class
 generated\livre\package-info.class
 generated\livre\AfficherResultat.class

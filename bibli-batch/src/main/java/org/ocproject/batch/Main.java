@@ -7,9 +7,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import generated.livre.LivreManager;
+import generated.livre.LivreManagerImpl;
 import generated.ouvrage.Ouvrage;
 import generated.ouvrage.OuvrageManager;
 import generated.ouvrage.OuvrageManagerImpl;
+import generated.reservation.Reservation;
+import generated.reservation.ReservationManager;
+import generated.reservation.ReservationManagerImpl;
 import generated.user.User;
 import generated.user.UserManager;
 import generated.user.UserManagerImpl;
@@ -18,6 +23,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Tasks task = new Tasks();
+		task.isBookAvailable();
+		System.out.println("Task launched");
+		/*
 		OuvrageManager ouvrageMngr = new OuvrageManager();
 		UserManager userMngr = new UserManager();
 
@@ -59,7 +68,7 @@ public class Main {
 		actualMonth = month+1;
 		
 		System.out.println(actualDay+"/"+actualMonth+"/"+actualYear);
-		*/
+		*//*
 		Ouvrage ouvrage = new Ouvrage();
 		//Here checks in the list if a book should be returned
 		for(int i = 0; i < ouvrages.size(); i++) {
@@ -89,7 +98,7 @@ public class Main {
 				System.out.println(idUser);
 				
 				
-				Calendar calDao = Calendar.getInstance();;
+				Calendar calDao = Calendar.getInstance();
 				
 				calDao.set(yearDao, monthDao-1, dayDao);
 				
@@ -111,14 +120,15 @@ public class Main {
 						
 					}
 					System.out.println(message);
-					Email.sendEmail(message, "bouchetclem@gmail.com");
+					//Email.sendEmail(message, "bouchetclem@gmail.com");
 					//Email.sendEmail(message, user.getEmail());
 				}else {
 					System.out.println("current date is BEFORE return date");
 				}
 				System.out.println("=========    FIN    =========");
 				
+				
 			}
-		}
+		}*/
 	}
 }

@@ -2,7 +2,10 @@ package org.ocproject.service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.jws.WebMethod;
@@ -96,7 +99,7 @@ public class ReservationManagerImpl extends AbstractManager{
 		DaoFactory.getDaoDriver();
 		ReservationDao reservationDao = getDaoFactory().getReservationDao();
 		ResultSet result = reservationDao.selectAll(context);
-		List<Reservation> retour= new ArrayList<>();
+		List<Reservation> retour= new ArrayList<Reservation>();
 		int id = 0;
 		int idLivre = 0;
 		int idUser = 0;
@@ -114,14 +117,14 @@ public class ReservationManagerImpl extends AbstractManager{
 				reservation.setIdUser(idUser);
 				reservation.setDateDispo(dateDispo);
 				reservation.setDateRetourPrevu(dateRetour);
-				
+
 				retour.add(reservation);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return retour;
 	}
 
@@ -153,7 +156,7 @@ public class ReservationManagerImpl extends AbstractManager{
 			int ordre = 0;
 			int nb_resa = 0;
 			Livre livre = livreManager.detailLivre(idLivre);
-			for(Reservation item : liste) {
+			/*for(Reservation item : liste) {
 				Integer i = item.getOrdre();
 				if(item.getIdLivre()==idLivre) {
 					nb_resa++;
@@ -161,7 +164,9 @@ public class ReservationManagerImpl extends AbstractManager{
 				if(i != null && i > ordre) {
 					ordre = i;
 				}
-			}
+			}*/
+			ordre = liste.size();
+			nb_resa = liste.size();
 			if(livre.getNb_exemplaire()<= nb_resa*2) {
 				isFull = true;
 			}
@@ -185,6 +190,20 @@ public class ReservationManagerImpl extends AbstractManager{
 				ordre = item.getOrdre();
 			}
 		}
-		reservationDao.annulerReservation(context, idUser, ordre);
+		reservationDao.annulerReservation(context, id, ordre);
+	}
+	
+	@WebMethod
+	public void manageCurrentDate(int id) {
+		ApplicationContext context
+        = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+		DaoFactory.getDaoDriver();
+		ReservationDao reservationDao = getDaoFactory().getReservationDao();
+		String strDate = null;
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
+		strDate = format1.format(cal.getTime());
+		reservationDao.manageDates(context, id, strDate);
+		
 	}
 }

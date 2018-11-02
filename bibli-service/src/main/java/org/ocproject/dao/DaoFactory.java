@@ -109,7 +109,7 @@ public class DaoFactory {
 		return reservationDao;
 	}
 	
-	public void setOuvrageDao(ReservationDao rReservationDao ) {
+	public void setReservationDao(ReservationDao rReservationDao ) {
 		this.reservationDao = rReservationDao;
 	}
 

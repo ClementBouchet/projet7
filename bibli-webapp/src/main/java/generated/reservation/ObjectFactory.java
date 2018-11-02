@@ -26,10 +26,12 @@ public class ObjectFactory {
 
     private final static QName _ReserverResponse_QNAME = new QName("http://service.ocproject.org/", "reserverResponse");
     private final static QName _AnnulerReservation_QNAME = new QName("http://service.ocproject.org/", "annulerReservation");
+    private final static QName _ManageCurrentDateResponse_QNAME = new QName("http://service.ocproject.org/", "manageCurrentDateResponse");
     private final static QName _SelectAll_QNAME = new QName("http://service.ocproject.org/", "selectAll");
     private final static QName _SelectAllResponse_QNAME = new QName("http://service.ocproject.org/", "selectAllResponse");
     private final static QName _SelectByIdLivreResponse_QNAME = new QName("http://service.ocproject.org/", "selectByIdLivreResponse");
     private final static QName _AnnulerReservationResponse_QNAME = new QName("http://service.ocproject.org/", "annulerReservationResponse");
+    private final static QName _ManageCurrentDate_QNAME = new QName("http://service.ocproject.org/", "manageCurrentDate");
     private final static QName _SelectByIdUserResponse_QNAME = new QName("http://service.ocproject.org/", "selectByIdUserResponse");
     private final static QName _Reserver_QNAME = new QName("http://service.ocproject.org/", "reserver");
     private final static QName _SelectByIdLivre_QNAME = new QName("http://service.ocproject.org/", "selectByIdLivre");
@@ -48,6 +50,14 @@ public class ObjectFactory {
      */
     public AnnulerReservation createAnnulerReservation() {
         return new AnnulerReservation();
+    }
+
+    /**
+     * Create an instance of {@link ManageCurrentDateResponse }
+     * 
+     */
+    public ManageCurrentDateResponse createManageCurrentDateResponse() {
+        return new ManageCurrentDateResponse();
     }
 
     /**
@@ -115,6 +125,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ManageCurrentDate }
+     * 
+     */
+    public ManageCurrentDate createManageCurrentDate() {
+        return new ManageCurrentDate();
+    }
+
+    /**
      * Create an instance of {@link SelectByIdUserResponse }
      * 
      */
@@ -146,6 +164,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service.ocproject.org/", name = "annulerReservation")
     public JAXBElement<AnnulerReservation> createAnnulerReservation(AnnulerReservation value) {
         return new JAXBElement<AnnulerReservation>(_AnnulerReservation_QNAME, AnnulerReservation.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ManageCurrentDateResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.ocproject.org/", name = "manageCurrentDateResponse")
+    public JAXBElement<ManageCurrentDateResponse> createManageCurrentDateResponse(ManageCurrentDateResponse value) {
+        return new JAXBElement<ManageCurrentDateResponse>(_ManageCurrentDateResponse_QNAME, ManageCurrentDateResponse.class, null, value);
     }
 
     /**
@@ -182,6 +209,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service.ocproject.org/", name = "annulerReservationResponse")
     public JAXBElement<AnnulerReservationResponse> createAnnulerReservationResponse(AnnulerReservationResponse value) {
         return new JAXBElement<AnnulerReservationResponse>(_AnnulerReservationResponse_QNAME, AnnulerReservationResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ManageCurrentDate }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.ocproject.org/", name = "manageCurrentDate")
+    public JAXBElement<ManageCurrentDate> createManageCurrentDate(ManageCurrentDate value) {
+        return new JAXBElement<ManageCurrentDate>(_ManageCurrentDate_QNAME, ManageCurrentDate.class, null, value);
     }
 
     /**

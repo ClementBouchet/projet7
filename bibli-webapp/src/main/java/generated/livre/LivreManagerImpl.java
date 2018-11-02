@@ -27,21 +27,6 @@ public interface LivreManagerImpl {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns generated.livre.Livre
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "emprunterLivre", targetNamespace = "http://service.ocproject.org/", className = "generated.livre.EmprunterLivre")
-    @ResponseWrapper(localName = "emprunterLivreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.livre.EmprunterLivreResponse")
-    @Action(input = "http://service.ocproject.org/LivreManagerImpl/emprunterLivreRequest", output = "http://service.ocproject.org/LivreManagerImpl/emprunterLivreResponse")
-    public Livre emprunterLivre(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<generated.livre.Livre>
      */
@@ -64,6 +49,21 @@ public interface LivreManagerImpl {
     @ResponseWrapper(localName = "detailLivreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.livre.DetailLivreResponse")
     @Action(input = "http://service.ocproject.org/LivreManagerImpl/detailLivreRequest", output = "http://service.ocproject.org/LivreManagerImpl/detailLivreResponse")
     public Livre detailLivre(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns generated.livre.Livre
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "emprunterLivre", targetNamespace = "http://service.ocproject.org/", className = "generated.livre.EmprunterLivre")
+    @ResponseWrapper(localName = "emprunterLivreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.livre.EmprunterLivreResponse")
+    @Action(input = "http://service.ocproject.org/LivreManagerImpl/emprunterLivreRequest", output = "http://service.ocproject.org/LivreManagerImpl/emprunterLivreResponse")
+    public Livre emprunterLivre(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 

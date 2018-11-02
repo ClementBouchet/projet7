@@ -189,7 +189,7 @@ public class LivreManagerImpl extends AbstractManager{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return livres;
 	}
 	

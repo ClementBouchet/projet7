@@ -88,7 +88,7 @@ public class LivreDaoImpl implements LivreDao{
 		PreparedStatement prepStmt;
 		ResultSet result = null;
 		daoFactory = context.getBean("daoFactory", DaoFactory.class);
-		String sql = "SELECT id, titre, description, auteur, editeur  FROM livre;";
+		String sql = "SELECT * FROM livre;";
 		
 		try {
 			connexion = daoFactory.getConnection();

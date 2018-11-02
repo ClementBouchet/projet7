@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour afficherResultat complex type.
  * 
- * <p>Le fragment de schÃ©ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="afficherResultat">
@@ -34,7 +34,7 @@ public class AfficherResultat {
     protected String arg0;
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg0.
+     * Obtient la valeur de la propriété arg0.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class AfficherResultat {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg0.
+     * Définit la valeur de la propriété arg0.
      * 
      * @param value
      *     allowed object is

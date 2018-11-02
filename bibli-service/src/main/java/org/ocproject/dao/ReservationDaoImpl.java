@@ -83,7 +83,7 @@ public class ReservationDaoImpl implements ReservationDao{
 		ResultSet result = null;
 		daoFactory = context.getBean("daoFactory", DaoFactory.class);
 		
-		String req = "SELECT * FROM reservation";
+		String req = "SELECT * FROM reservation;";
 		
 		try {
 			connexion = daoFactory.getConnection();
@@ -103,7 +103,7 @@ public class ReservationDaoImpl implements ReservationDao{
 		daoFactory = context.getBean("daoFactory", DaoFactory.class);
 		
 		String req = "DELETE FROM reservation WHERE id =?;";
-		String req2 = "UPDATE reservation SET ordre = ordre+1 WHERE ordre > ?";
+		String req2 = "UPDATE reservation SET ordre = ordre-1 WHERE ordre > ?;";
 		try {
 			connexion = daoFactory.getConnection();
 			prepStmt = connexion.prepareStatement(req, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -115,6 +115,26 @@ public class ReservationDaoImpl implements ReservationDao{
 			prepStmt.executeUpdate();
 		}catch (SQLException e) {
 			
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void manageDates(ApplicationContext context, int id, String date) {
+		Connection connexion;
+		PreparedStatement prepStmt;
+		daoFactory = context.getBean("daoFactory", DaoFactory.class);
+		
+		String req = "UPDATE reservation SET date_dispo = ? WHERE id = ?;";
+		
+		try {
+			connexion = daoFactory.getConnection();
+			prepStmt = connexion.prepareStatement(req, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			prepStmt.setString(1, date);
+			prepStmt.setInt(2, id);
+			prepStmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

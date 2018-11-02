@@ -26,21 +26,6 @@ public interface UserManagerImpl {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns generated.user.User
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "detailUser", targetNamespace = "http://service.ocproject.org/", className = "generated.user.DetailUser")
-    @ResponseWrapper(localName = "detailUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.user.DetailUserResponse")
-    @Action(input = "http://service.ocproject.org/UserManagerImpl/detailUserRequest", output = "http://service.ocproject.org/UserManagerImpl/detailUserResponse")
-    public User detailUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
      * @param arg1
      * @param arg0
      * @return
@@ -56,6 +41,21 @@ public interface UserManagerImpl {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns generated.user.User
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "detailUser", targetNamespace = "http://service.ocproject.org/", className = "generated.user.DetailUser")
+    @ResponseWrapper(localName = "detailUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.user.DetailUserResponse")
+    @Action(input = "http://service.ocproject.org/UserManagerImpl/detailUserRequest", output = "http://service.ocproject.org/UserManagerImpl/detailUserResponse")
+    public User detailUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
     /**
      * 

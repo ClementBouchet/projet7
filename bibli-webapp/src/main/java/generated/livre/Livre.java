@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour livre complex type.
  * 
- * <p>Le fragment de schÃ©ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="livre">
@@ -55,7 +55,7 @@ public class Livre {
     protected String titre;
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© auteur.
+     * Obtient la valeur de la propriété auteur.
      * 
      * @return
      *     possible object is
@@ -67,7 +67,7 @@ public class Livre {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© auteur.
+     * Définit la valeur de la propriété auteur.
      * 
      * @param value
      *     allowed object is
@@ -79,7 +79,7 @@ public class Livre {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© description.
+     * Obtient la valeur de la propriété description.
      * 
      * @return
      *     possible object is
@@ -91,7 +91,7 @@ public class Livre {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© description.
+     * Définit la valeur de la propriété description.
      * 
      * @param value
      *     allowed object is
@@ -103,7 +103,7 @@ public class Livre {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© editeur.
+     * Obtient la valeur de la propriété editeur.
      * 
      * @return
      *     possible object is
@@ -115,7 +115,7 @@ public class Livre {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© editeur.
+     * Définit la valeur de la propriété editeur.
      * 
      * @param value
      *     allowed object is
@@ -127,7 +127,7 @@ public class Livre {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© id.
+     * Obtient la valeur de la propriété id.
      * 
      */
     public int getId() {
@@ -135,7 +135,7 @@ public class Livre {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© id.
+     * Définit la valeur de la propriété id.
      * 
      */
     public void setId(int value) {
@@ -143,7 +143,7 @@ public class Livre {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© nbExemplaire.
+     * Obtient la valeur de la propriété nbExemplaire.
      * 
      */
     public int getNbExemplaire() {
@@ -151,7 +151,7 @@ public class Livre {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© nbExemplaire.
+     * Définit la valeur de la propriété nbExemplaire.
      * 
      */
     public void setNbExemplaire(int value) {
@@ -159,7 +159,7 @@ public class Livre {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© nbRestant.
+     * Obtient la valeur de la propriété nbRestant.
      * 
      */
     public int getNbRestant() {
@@ -167,7 +167,7 @@ public class Livre {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© nbRestant.
+     * Définit la valeur de la propriété nbRestant.
      * 
      */
     public void setNbRestant(int value) {
@@ -175,7 +175,7 @@ public class Livre {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© titre.
+     * Obtient la valeur de la propriété titre.
      * 
      * @return
      *     possible object is
@@ -187,7 +187,7 @@ public class Livre {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© titre.
+     * Définit la valeur de la propriété titre.
      * 
      * @param value
      *     allowed object is

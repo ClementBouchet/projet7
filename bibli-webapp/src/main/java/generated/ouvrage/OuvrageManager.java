@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "OuvrageManager", targetNamespace = "http://service.ocproject.org/", wsdlLocation = "http://lfr014449:8080/bibli-service-16660710278770111829.0-SNAPSHOT/OuvrageManager?wsdl")
+@WebServiceClient(name = "OuvrageManager", targetNamespace = "http://service.ocproject.org/", wsdlLocation = "http://clem:8080/bibli-service6005036846654524934/OuvrageManager?wsdl")
 public class OuvrageManager
     extends Service
 {
@@ -30,7 +30,7 @@ public class OuvrageManager
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://clem:8080/bibli-service2303077902176825818/OuvrageManager?wsdl");
+            url = new URL("http://clem:8080/bibli-service6005036846654524934/OuvrageManager?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -10,9 +10,11 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 
 import org.ocproject.beans.Ouvrage;
+import org.ocproject.beans.Reservation;
 import org.ocproject.dao.DaoFactory;
 import org.ocproject.dao.LivreDao;
 import org.ocproject.dao.OuvrageDao;
+import org.ocproject.dao.ReservationDao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -83,9 +85,17 @@ public class OuvrageManagerImpl extends AbstractManager {
 			ApplicationContext context
 	        = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
 			DaoFactory.getDaoDriver();
+			ReservationManagerImpl reservationManager = new ReservationManagerImpl();
 			OuvrageDao ouvrageDao = getDaoFactory().getOuvrageDao();
 			Ouvrage ouvrage = ouvrageDao.emprunter(context, id_livre, ide, date_emprunt, date_retour);
-		
+			List<Reservation> reservations = reservationManager.selectByIdLivre(id_livre);
+			int id = 0;
+			for(Reservation item : reservations) {
+				if(item != null && item.getIdLivre()==id_livre && item.getIdUser()==ide) {
+					id = item.getId();
+				}
+			}
+			reservationManager.annulerReservation(id, ide);
 			return ouvrage;
 			
 		}

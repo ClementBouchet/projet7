@@ -15,4 +15,6 @@ public interface ReservationDao {
 	public ResultSet selectAll(ApplicationContext context);
 	
 	public void annulerReservation(ApplicationContext context, int id, int ordre);
+	
+	public void manageDates(ApplicationContext context, int id, String date);
 }

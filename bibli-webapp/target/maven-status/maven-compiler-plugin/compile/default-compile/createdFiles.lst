@@ -48,6 +48,8 @@ generated\reservation\SelectByIdLivreResponse.class
 generated\reservation\ReserverResponse.class
 generated\livre\LivreManager.class
 org\ocproject\actions\BookAction.class
+generated\reservation\ManageCurrentDate.class
+generated\reservation\ManageCurrentDateResponse.class
 generated\user\ModifUser.class
 generated\reservation\ReservationManagerImpl.class
 generated\livre\package-info.class
