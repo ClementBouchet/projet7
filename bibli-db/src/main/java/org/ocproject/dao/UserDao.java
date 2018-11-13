@@ -1,7 +1,7 @@
 package org.ocproject.dao;
 
 import java.sql.ResultSet;
-import org.ocproject.bibli.model.User;
+
 
 public interface UserDao {
 	
