@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -132,17 +133,21 @@ public class UserAction extends ActionSupport implements SessionAware{
 				this.ouvrages = ouvrageManager.checkEmprunts();
 				this.livres = new ArrayList<>();
 				for(Ouvrage ouvrage : ouvrages) {
-					if(this.user.getId() == ouvrage.getIdEmprunteur())
+					if(this.user.getId() == ouvrage.getIdEmprunteur()) {
 						this.livres.add(livreManager.detailLivre(ouvrage.getIdLivre()));
-					SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy");
-					try {
-						Date date = formatter.parse(ouvrage.getDateRetour());
-						if(currentDate.before(date)) {
-							ouvrage.setDepasse(true);
+						SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.FRANCE);
+						String datetest = ouvrage.getDateRetour();
+						try {
+							Date date = formatter.parse(datetest);
+							if(currentDate.after(date)) {
+								ouvrage.setDepasse(true);
+							}else {
+								ouvrage.setDepasse(false);
+							}
+						} catch (ParseException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 						}
-					} catch (ParseException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
 					}
 				}
 				

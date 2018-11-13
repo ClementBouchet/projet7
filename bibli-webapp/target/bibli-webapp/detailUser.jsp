@@ -54,12 +54,14 @@
 					Rendre
 				</s:a>
 				<s:if test="prolongement == false">
+				<s:if test="depasse == false">
 					<s:a action = "doProlonger">
 						<s:param name = "id_ouvrage" value = "id"></s:param>
 						<s:param name = "id_livre" value = "idLivre"></s:param>
 						<s:param name = "id" value = "user.id"></s:param>
 						Prolonger
 					</s:a>
+				</s:if>
 				</s:if>
 				<p></p>
 				</li>
