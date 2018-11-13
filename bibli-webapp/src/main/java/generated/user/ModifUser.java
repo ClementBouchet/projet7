@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour modifUser complex type.
  * 
- * <p>Le fragment de schÃ©ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="modifUser">
@@ -37,7 +37,7 @@ public class ModifUser {
     protected String arg1;
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg0.
+     * Obtient la valeur de la propriété arg0.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class ModifUser {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg0.
+     * Définit la valeur de la propriété arg0.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class ModifUser {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg1.
+     * Obtient la valeur de la propriété arg1.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class ModifUser {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg1.
+     * Définit la valeur de la propriété arg1.
      * 
      * @param value
      *     allowed object is

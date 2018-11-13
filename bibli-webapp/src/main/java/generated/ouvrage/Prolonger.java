@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour prolonger complex type.
  * 
- * <p>Le fragment de schÃ©ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="prolonger">
@@ -46,7 +46,7 @@ public class Prolonger {
     protected String arg4;
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg0.
+     * Obtient la valeur de la propriété arg0.
      * 
      */
     public int getArg0() {
@@ -54,7 +54,7 @@ public class Prolonger {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg0.
+     * Définit la valeur de la propriété arg0.
      * 
      */
     public void setArg0(int value) {
@@ -62,7 +62,7 @@ public class Prolonger {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg1.
+     * Obtient la valeur de la propriété arg1.
      * 
      */
     public int getArg1() {
@@ -70,7 +70,7 @@ public class Prolonger {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg1.
+     * Définit la valeur de la propriété arg1.
      * 
      */
     public void setArg1(int value) {
@@ -78,7 +78,7 @@ public class Prolonger {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg2.
+     * Obtient la valeur de la propriété arg2.
      * 
      */
     public int getArg2() {
@@ -86,7 +86,7 @@ public class Prolonger {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg2.
+     * Définit la valeur de la propriété arg2.
      * 
      */
     public void setArg2(int value) {
@@ -94,7 +94,7 @@ public class Prolonger {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg3.
+     * Obtient la valeur de la propriété arg3.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class Prolonger {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg3.
+     * Définit la valeur de la propriété arg3.
      * 
      * @param value
      *     allowed object is
@@ -118,7 +118,7 @@ public class Prolonger {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© arg4.
+     * Obtient la valeur de la propriété arg4.
      * 
      * @return
      *     possible object is
@@ -130,7 +130,7 @@ public class Prolonger {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© arg4.
+     * Définit la valeur de la propriété arg4.
      * 
      * @param value
      *     allowed object is

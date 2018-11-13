@@ -26,18 +26,21 @@ public interface UserManagerImpl {
 
     /**
      * 
+     * @param arg1
      * @param arg0
      * @return
-     *     returns generated.user.User
+     *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "detailUser", targetNamespace = "http://service.ocproject.org/", className = "generated.user.DetailUser")
-    @ResponseWrapper(localName = "detailUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.user.DetailUserResponse")
-    @Action(input = "http://service.ocproject.org/UserManagerImpl/detailUserRequest", output = "http://service.ocproject.org/UserManagerImpl/detailUserResponse")
-    public User detailUser(
+    @RequestWrapper(localName = "modifUser", targetNamespace = "http://service.ocproject.org/", className = "generated.user.ModifUser")
+    @ResponseWrapper(localName = "modifUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.user.ModifUserResponse")
+    @Action(input = "http://service.ocproject.org/UserManagerImpl/modifUserRequest", output = "http://service.ocproject.org/UserManagerImpl/modifUserResponse")
+    public String modifUser(
         @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
     /**
      * 
@@ -59,21 +62,18 @@ public interface UserManagerImpl {
 
     /**
      * 
-     * @param arg1
      * @param arg0
      * @return
-     *     returns java.lang.String
+     *     returns generated.user.User
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "modifUser", targetNamespace = "http://service.ocproject.org/", className = "generated.user.ModifUser")
-    @ResponseWrapper(localName = "modifUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.user.ModifUserResponse")
-    @Action(input = "http://service.ocproject.org/UserManagerImpl/modifUserRequest", output = "http://service.ocproject.org/UserManagerImpl/modifUserResponse")
-    public String modifUser(
+    @RequestWrapper(localName = "detailUser", targetNamespace = "http://service.ocproject.org/", className = "generated.user.DetailUser")
+    @ResponseWrapper(localName = "detailUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.user.DetailUserResponse")
+    @Action(input = "http://service.ocproject.org/UserManagerImpl/detailUserRequest", output = "http://service.ocproject.org/UserManagerImpl/detailUserResponse")
+    public User detailUser(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
+        int arg0);
 
     /**
      * 

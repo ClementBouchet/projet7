@@ -1,6 +1,11 @@
 package org.ocproject.actions;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -117,6 +122,9 @@ public class UserAction extends ActionSupport implements SessionAware{
 		LivreManager livreMngr = new LivreManager();
 		LivreManagerImpl livreManager = livreMngr.getLivreManagerImplPort();
 		
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		Date currentDate = new Date();
+		
 			if(id == null) {
 				this.addActionError("No id nor user");
 			}else {
@@ -126,6 +134,16 @@ public class UserAction extends ActionSupport implements SessionAware{
 				for(Ouvrage ouvrage : ouvrages) {
 					if(this.user.getId() == ouvrage.getIdEmprunteur())
 						this.livres.add(livreManager.detailLivre(ouvrage.getIdLivre()));
+					SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy");
+					try {
+						Date date = formatter.parse(ouvrage.getDateRetour());
+						if(currentDate.before(date)) {
+							ouvrage.setDepasse(true);
+						}
+					} catch (ParseException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 				
 				if(user == null || ouvrages == null) {

@@ -27,18 +27,6 @@ public interface OuvrageManagerImpl {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<generated.ouvrage.Ouvrage>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "checkEmprunts", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.CheckEmprunts")
-    @ResponseWrapper(localName = "checkEmpruntsResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.CheckEmpruntsResponse")
-    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/checkEmpruntsRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/checkEmpruntsResponse")
-    public List<Ouvrage> checkEmprunts();
-
-    /**
-     * 
      * @param arg3
      * @param arg2
      * @param arg4
@@ -66,36 +54,6 @@ public interface OuvrageManagerImpl {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns generated.ouvrage.Ouvrage
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "readInfoUser", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoUser")
-    @ResponseWrapper(localName = "readInfoUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoUserResponse")
-    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/readInfoUserRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/readInfoUserResponse")
-    public Ouvrage readInfoUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns generated.ouvrage.Ouvrage
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "readInfoLivre", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoLivre")
-    @ResponseWrapper(localName = "readInfoLivreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoLivreResponse")
-    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/readInfoLivreRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/readInfoLivreResponse")
-    public Ouvrage readInfoLivre(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
      * @param arg1
      * @param arg0
      * @return
@@ -111,6 +69,48 @@ public interface OuvrageManagerImpl {
         int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         int arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns generated.ouvrage.Ouvrage
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "readInfoUser", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoUser")
+    @ResponseWrapper(localName = "readInfoUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoUserResponse")
+    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/readInfoUserRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/readInfoUserResponse")
+    public Ouvrage readInfoUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<generated.ouvrage.Ouvrage>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "checkEmprunts", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.CheckEmprunts")
+    @ResponseWrapper(localName = "checkEmpruntsResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.CheckEmpruntsResponse")
+    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/checkEmpruntsRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/checkEmpruntsResponse")
+    public List<Ouvrage> checkEmprunts();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns generated.ouvrage.Ouvrage
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "readInfoLivre", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoLivre")
+    @ResponseWrapper(localName = "readInfoLivreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.ouvrage.ReadInfoLivreResponse")
+    @Action(input = "http://service.ocproject.org/OuvrageManagerImpl/readInfoLivreRequest", output = "http://service.ocproject.org/OuvrageManagerImpl/readInfoLivreResponse")
+    public Ouvrage readInfoLivre(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
     /**
      * 

@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour user complex type.
  * 
- * <p>Le fragment de schÃ©ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="user">
@@ -50,7 +50,7 @@ public class User {
     protected String pseudo;
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© email.
+     * Obtient la valeur de la propriété email.
      * 
      * @return
      *     possible object is
@@ -62,7 +62,7 @@ public class User {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© email.
+     * Définit la valeur de la propriété email.
      * 
      * @param value
      *     allowed object is
@@ -74,7 +74,7 @@ public class User {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© id.
+     * Obtient la valeur de la propriété id.
      * 
      */
     public int getId() {
@@ -82,7 +82,7 @@ public class User {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© id.
+     * Définit la valeur de la propriété id.
      * 
      */
     public void setId(int value) {
@@ -119,7 +119,7 @@ public class User {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© password.
+     * Obtient la valeur de la propriété password.
      * 
      * @return
      *     possible object is
@@ -131,7 +131,7 @@ public class User {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© password.
+     * Définit la valeur de la propriété password.
      * 
      * @param value
      *     allowed object is
@@ -143,7 +143,7 @@ public class User {
     }
 
     /**
-     * Obtient la valeur de la propriÃ©tÃ© pseudo.
+     * Obtient la valeur de la propriété pseudo.
      * 
      * @return
      *     possible object is
@@ -155,7 +155,7 @@ public class User {
     }
 
     /**
-     * DÃ©finit la valeur de la propriÃ©tÃ© pseudo.
+     * Définit la valeur de la propriété pseudo.
      * 
      * @param value
      *     allowed object is

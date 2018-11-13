@@ -8,8 +8,16 @@ public class Ouvrage{
 	int id_emprunteur;
 	boolean prolongement;
 	int id_livre;
+	boolean depasse;
 	
 	
+	
+	public boolean isDepasse() {
+		return depasse;
+	}
+	public void setDepasse(boolean depasse) {
+		this.depasse = depasse;
+	}
 	public int getId_livre() {
 		return id_livre;
 	}
