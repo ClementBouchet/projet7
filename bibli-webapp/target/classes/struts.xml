@@ -156,6 +156,16 @@
    			<result name = "error">error.jsp</result>		
    		</action>
    		
+   		<action name = "reserver"
+   				class = "org.ocproject.actions.BookAction"
+   				method = "reserver">
+   			<result name = "success" type = "redirectAction">
+   				<param name = "actionName">user_detail</param>
+   				<param name = "id">${#session.user.id}</param>
+   			</result>
+   			<result name = "error">error.jsp</result>		
+   		</action>
+   		
    		
    		<action name = "doRendre"
    				class = "org.ocproject.actions.BookAction"

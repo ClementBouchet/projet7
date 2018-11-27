@@ -28,63 +28,6 @@ public interface ReservationManagerImpl {
     /**
      * 
      * @param arg0
-     * @return
-     *     returns java.util.List<generated.reservation.Reservation>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "selectByIdLivre", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdLivre")
-    @ResponseWrapper(localName = "selectByIdLivreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdLivreResponse")
-    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/selectByIdLivreRequest", output = "http://service.ocproject.org/ReservationManagerImpl/selectByIdLivreResponse")
-    public List<Reservation> selectByIdLivre(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "reserver", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.Reserver")
-    @ResponseWrapper(localName = "reserverResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.ReserverResponse")
-    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/reserverRequest", output = "http://service.ocproject.org/ReservationManagerImpl/reserverResponse")
-    public void reserver(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<generated.reservation.Reservation>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "selectByIdUser", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdUser")
-    @ResponseWrapper(localName = "selectByIdUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdUserResponse")
-    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/selectByIdUserRequest", output = "http://service.ocproject.org/ReservationManagerImpl/selectByIdUserResponse")
-    public List<Reservation> selectByIdUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<generated.reservation.Reservation>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "selectAll", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectAll")
-    @ResponseWrapper(localName = "selectAllResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectAllResponse")
-    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/selectAllRequest", output = "http://service.ocproject.org/ReservationManagerImpl/selectAllResponse")
-    public List<Reservation> selectAll();
-
-    /**
-     * 
-     * @param arg0
      */
     @WebMethod
     @RequestWrapper(localName = "manageCurrentDate", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.ManageCurrentDate")
@@ -108,5 +51,65 @@ public interface ReservationManagerImpl {
         int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         int arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<generated.reservation.Reservation>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "reserver", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.Reserver")
+    @ResponseWrapper(localName = "reserverResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.ReserverResponse")
+    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/reserverRequest", output = "http://service.ocproject.org/ReservationManagerImpl/reserverResponse")
+    public List<Reservation> reserver(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<generated.reservation.Reservation>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "selectByIdUser", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdUser")
+    @ResponseWrapper(localName = "selectByIdUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdUserResponse")
+    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/selectByIdUserRequest", output = "http://service.ocproject.org/ReservationManagerImpl/selectByIdUserResponse")
+    public List<Reservation> selectByIdUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<generated.reservation.Reservation>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "selectByIdLivre", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdLivre")
+    @ResponseWrapper(localName = "selectByIdLivreResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectByIdLivreResponse")
+    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/selectByIdLivreRequest", output = "http://service.ocproject.org/ReservationManagerImpl/selectByIdLivreResponse")
+    public List<Reservation> selectByIdLivre(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<generated.reservation.Reservation>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "selectAll", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectAll")
+    @ResponseWrapper(localName = "selectAllResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.reservation.SelectAllResponse")
+    @Action(input = "http://service.ocproject.org/ReservationManagerImpl/selectAllRequest", output = "http://service.ocproject.org/ReservationManagerImpl/selectAllResponse")
+    public List<Reservation> selectAll();
 
 }

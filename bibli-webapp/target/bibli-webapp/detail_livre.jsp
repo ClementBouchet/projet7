@@ -40,6 +40,15 @@
         Emprunter
         </s:a>
         </s:if>
+        
+        <s:if test ="livre.nbRestant == 0">
+		
+        <s:a action="reserver">
+        <s:param name = "id_livre" value= "livre.id"></s:param>
+        <s:param name = "id" value= "#session.user.id"></s:param>
+        Réserver
+        </s:a>
+        </s:if>
     </s:if>
 	</p>
 </body>

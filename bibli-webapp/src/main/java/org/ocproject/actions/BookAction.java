@@ -14,6 +14,9 @@ import generated.livre.LivreManagerImpl;
 import generated.ouvrage.Ouvrage;
 import generated.ouvrage.OuvrageManager;
 import generated.ouvrage.OuvrageManagerImpl;
+import generated.reservation.Reservation;
+import generated.reservation.ReservationManager;
+import generated.reservation.ReservationManagerImpl;
 import generated.user.UserManager;
 import generated.user.UserManagerImpl;
 
@@ -86,6 +89,17 @@ public class BookAction extends ActionSupport{
 			this.addActionError("Problem");
 		}else {
 			livres = livreManager.afficherResultat(search);
+		}
+		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+	}
+	
+	public String reserver() {
+		ReservationManager reserverMngr = new ReservationManager();
+		ReservationManagerImpl reservationManager = reserverMngr.getReservationManagerImplPort();
+		List<Reservation> liste = null;
+		liste = reservationManager.reserver(id, id_livre);
+		if(liste.isEmpty()) {
+			this.addActionError("Reservation Problem");
 		}
 		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
 	}

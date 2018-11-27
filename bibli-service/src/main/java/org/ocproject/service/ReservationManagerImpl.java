@@ -129,7 +129,7 @@ public class ReservationManagerImpl extends AbstractManager{
 	}
 
 	@WebMethod
-	public void reserver(int idUser, int idLivre) {
+	public List<Reservation> reserver(int idUser, int idLivre) {
 		ApplicationContext context
         = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
 		DaoFactory.getDaoDriver();
@@ -173,7 +173,12 @@ public class ReservationManagerImpl extends AbstractManager{
 			if(!isFull) {
 				ordre++;
 				reservationDao.reserverLivre(context, idUser, idLivre, ordre);
+				return liste;
+			}else {
+				return null;
 			}
+		}else {
+			return null;
 		}
 	}
 	
