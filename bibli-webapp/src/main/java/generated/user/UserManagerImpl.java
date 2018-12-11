@@ -29,6 +29,63 @@ public interface UserManagerImpl {
      * @param arg1
      * @param arg0
      * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "setRappelOption", targetNamespace = "http://service.ocproject.org/", className = "generated.user.SetRappelOption")
+    @ResponseWrapper(localName = "setRappelOptionResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.user.SetRappelOptionResponse")
+    @Action(input = "http://service.ocproject.org/UserManagerImpl/setRappelOptionRequest", output = "http://service.ocproject.org/UserManagerImpl/setRappelOptionResponse")
+    public int setRappelOption(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Boolean arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
+     * @param arg2
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns generated.user.User
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "createUser", targetNamespace = "http://service.ocproject.org/", className = "generated.user.CreateUser")
+    @ResponseWrapper(localName = "createUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.user.CreateUserResponse")
+    @Action(input = "http://service.ocproject.org/UserManagerImpl/createUserRequest", output = "http://service.ocproject.org/UserManagerImpl/createUserResponse")
+    public User createUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "modifUser", targetNamespace = "http://service.ocproject.org/", className = "generated.user.ModifUser")
+    @ResponseWrapper(localName = "modifUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.user.ModifUserResponse")
+    @Action(input = "http://service.ocproject.org/UserManagerImpl/modifUserRequest", output = "http://service.ocproject.org/UserManagerImpl/modifUserResponse")
+    public String modifUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
      *     returns generated.user.User
      */
     @WebMethod
@@ -56,44 +113,5 @@ public interface UserManagerImpl {
     public User detailUser(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "modifUser", targetNamespace = "http://service.ocproject.org/", className = "generated.user.ModifUser")
-    @ResponseWrapper(localName = "modifUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.user.ModifUserResponse")
-    @Action(input = "http://service.ocproject.org/UserManagerImpl/modifUserRequest", output = "http://service.ocproject.org/UserManagerImpl/modifUserResponse")
-    public String modifUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1);
-
-    /**
-     * 
-     * @param arg2
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns generated.user.User
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "createUser", targetNamespace = "http://service.ocproject.org/", className = "generated.user.CreateUser")
-    @ResponseWrapper(localName = "createUserResponse", targetNamespace = "http://service.ocproject.org/", className = "generated.user.CreateUserResponse")
-    @Action(input = "http://service.ocproject.org/UserManagerImpl/createUserRequest", output = "http://service.ocproject.org/UserManagerImpl/createUserResponse")
-    public User createUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        String arg1,
-        @WebParam(name = "arg2", targetNamespace = "")
-        String arg2);
 
 }

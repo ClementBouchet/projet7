@@ -24,11 +24,13 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _SetRappelOption_QNAME = new QName("http://service.ocproject.org/", "setRappelOption");
     private final static QName _CreateUserResponse_QNAME = new QName("http://service.ocproject.org/", "createUserResponse");
     private final static QName _ConnectUser_QNAME = new QName("http://service.ocproject.org/", "connectUser");
     private final static QName _ConnectUserResponse_QNAME = new QName("http://service.ocproject.org/", "connectUserResponse");
     private final static QName _DetailUser_QNAME = new QName("http://service.ocproject.org/", "detailUser");
     private final static QName _ModifUser_QNAME = new QName("http://service.ocproject.org/", "modifUser");
+    private final static QName _SetRappelOptionResponse_QNAME = new QName("http://service.ocproject.org/", "setRappelOptionResponse");
     private final static QName _CreateUser_QNAME = new QName("http://service.ocproject.org/", "createUser");
     private final static QName _DetailUserResponse_QNAME = new QName("http://service.ocproject.org/", "detailUserResponse");
     private final static QName _ModifUserResponse_QNAME = new QName("http://service.ocproject.org/", "modifUserResponse");
@@ -46,6 +48,14 @@ public class ObjectFactory {
      */
     public CreateUserResponse createCreateUserResponse() {
         return new CreateUserResponse();
+    }
+
+    /**
+     * Create an instance of {@link SetRappelOption }
+     * 
+     */
+    public SetRappelOption createSetRappelOption() {
+        return new SetRappelOption();
     }
 
     /**
@@ -97,6 +107,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SetRappelOptionResponse }
+     * 
+     */
+    public SetRappelOptionResponse createSetRappelOptionResponse() {
+        return new SetRappelOptionResponse();
+    }
+
+    /**
      * Create an instance of {@link ModifUser }
      * 
      */
@@ -110,6 +128,15 @@ public class ObjectFactory {
      */
     public User createUser() {
         return new User();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetRappelOption }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.ocproject.org/", name = "setRappelOption")
+    public JAXBElement<SetRappelOption> createSetRappelOption(SetRappelOption value) {
+        return new JAXBElement<SetRappelOption>(_SetRappelOption_QNAME, SetRappelOption.class, null, value);
     }
 
     /**
@@ -155,6 +182,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service.ocproject.org/", name = "modifUser")
     public JAXBElement<ModifUser> createModifUser(ModifUser value) {
         return new JAXBElement<ModifUser>(_ModifUser_QNAME, ModifUser.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetRappelOptionResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.ocproject.org/", name = "setRappelOptionResponse")
+    public JAXBElement<SetRappelOptionResponse> createSetRappelOptionResponse(SetRappelOptionResponse value) {
+        return new JAXBElement<SetRappelOptionResponse>(_SetRappelOptionResponse_QNAME, SetRappelOptionResponse.class, null, value);
     }
 
     /**

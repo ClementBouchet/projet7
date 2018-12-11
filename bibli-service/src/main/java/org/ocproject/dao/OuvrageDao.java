@@ -17,6 +17,8 @@ public interface OuvrageDao {
 	
 	public ResultSet checkEmprunts(ApplicationContext context);
 	
+	public ResultSet checkEmpruntsByUserId(ApplicationContext context, int userId);
+	
 	public void rendre(ApplicationContext context,int id);
 	
 	public ResultSet select(ApplicationContext context,int id);

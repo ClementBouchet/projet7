@@ -2,6 +2,8 @@ package org.ocproject.service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -25,6 +27,14 @@ public class UserManagerImpl extends AbstractManager {
 		utilisateur.setPassword(password);
 		getDaoFactory().getUserDao().modifyUser(context,utilisateur);
 		return pseudo;
+	}
+	
+	public int setRappelOption(Boolean rappel, int id) {
+		ApplicationContext context
+        = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+		DaoFactory.getDaoDriver();
+		getDaoFactory().getUserDao().setRappelOption(context, rappel, id);
+		return id;
 	}
 	
 	public User connectUser(String pseudo, String password) {
@@ -62,12 +72,14 @@ public class UserManagerImpl extends AbstractManager {
 		String pseudo = null;
 		String password = null;
 		String email = null;
+		Boolean rappel = true;
 		User utilisateur = new User();
 	
 		ResultSet result = getDaoFactory().getUserDao().select(context,id);
 		
 		try {
 			if (result.first()) {
+				rappel = result.getBoolean("rappel");
 				pseudo = result.getString("pseudo");
 				password = result.getString("password");
 				email = result.getString("email");
@@ -77,7 +89,7 @@ public class UserManagerImpl extends AbstractManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		utilisateur.setRappel(rappel);
 		utilisateur.setPseudo(pseudo);
 		utilisateur.setPassword(password);
 		utilisateur.setEmail(email);
@@ -115,6 +127,41 @@ public class UserManagerImpl extends AbstractManager {
 		}
 		
 		return user;
+	}
+	
+	public List<User> selectAll(){
+		ApplicationContext context
+        = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+		DaoFactory.getDaoDriver();
+		String pseudo = null;
+		String password = null;
+		String email = null;
+		Boolean rappel = true;
+		int id = 0;
+		List<User> users = new ArrayList<User>();
+		ResultSet result = getDaoFactory().getUserDao().selectAll(context);
+		
+		try {
+			while (result.next()) {
+				User utilisateur = new User();
+				rappel = result.getBoolean("rappel");
+				pseudo = result.getString("pseudo");
+				password = result.getString("password");
+				email = result.getString("email");
+				id = result.getInt("id");
+				utilisateur.setEmail(email);
+				utilisateur.setId(id);
+				utilisateur.setPassword(password);
+				utilisateur.setRappel(rappel);
+				utilisateur.setPseudo(pseudo);
+				users.add(utilisateur);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return users;
 	}
 
 }

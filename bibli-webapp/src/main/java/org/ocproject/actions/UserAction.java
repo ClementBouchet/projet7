@@ -28,14 +28,23 @@ public class UserAction extends ActionSupport implements SessionAware{
 	String email;
 	private Map<String,Object> session;	
 	Integer id;
+	Boolean rappel;
 	User user;
 	private List<Ouvrage> ouvrages;
 	List<Livre> livres;
 	
 //  ================== Getters/Setters ==================
 	
+	
+	
 	@Override
 	public void setSession(Map<String, Object> session) {this.session = session;}
+	public Boolean getRappel() {
+		return rappel;
+	}
+	public void setRappel(Boolean rappel) {
+		this.rappel = rappel;
+	}
 	public Map<String, Object> getSession() {return session;}
 	public String getPseudo() {return pseudo;}	
 	public String getPassword() {return password;}
@@ -54,7 +63,21 @@ public class UserAction extends ActionSupport implements SessionAware{
 	// ============ Méthodes ==================
 	
 	
-	
+	//Choisir d'activer ou non l'option de rappel par mail
+	public String setRappelOption() {
+		
+		UserManager userMngr = new UserManager();
+		UserManagerImpl userManager = userMngr.getUserManagerImplPort();
+		
+		int retourWs = 0;
+		retourWs = userManager.setRappelOption(rappel, id);
+		
+		if (retourWs == 0) {
+			this.addActionError("Erreur changement option");
+		}
+		
+		return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+	}
 
 	//Creates a new user with a username, a password and an email address
 	public String createUser() {

@@ -8,9 +8,17 @@ public class User {
 	String pseudo;
 	String password;
 	String email;
+	Boolean rappel;
 	ArrayList<Integer> liste;
 	
 	
+	
+	public Boolean getRappel() {
+		return rappel;
+	}
+	public void setRappel(Boolean rappel) {
+		this.rappel = rappel;
+	}
 	public int getId() {
 		return id;
 	}

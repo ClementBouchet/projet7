@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="liste" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="pseudo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="rappel" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,7 +39,8 @@ import javax.xml.bind.annotation.XmlType;
     "id",
     "liste",
     "password",
-    "pseudo"
+    "pseudo",
+    "rappel"
 })
 public class User {
 
@@ -48,6 +50,7 @@ public class User {
     protected List<Integer> liste;
     protected String password;
     protected String pseudo;
+    protected Boolean rappel;
 
     /**
      * Obtient la valeur de la propriété email.
@@ -164,6 +167,30 @@ public class User {
      */
     public void setPseudo(String value) {
         this.pseudo = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété rappel.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isRappel() {
+        return rappel;
+    }
+
+    /**
+     * Définit la valeur de la propriété rappel.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setRappel(Boolean value) {
+        this.rappel = value;
     }
 
 }

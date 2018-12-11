@@ -68,6 +68,8 @@
    			<result name="success">detailUser.jsp</result>
    			<result name = "error">error.jsp</result>
    		</action>
+   		
+   		<!-- ========================== -->
    
    		<action name = "newuser"
    				class= "org.ocproject.actions.UserAction"
@@ -86,6 +88,26 @@
    			<result name = "error">error.jsp</result>
    		</action>
    		
+   		<!-- ========================== -->
+   		
+   		<action name = "setRappel"
+   				class= "org.ocproject.actions.UserAction"
+   				method = "setRappelOption">
+   				
+   				<!--  <interceptor-ref name="store">
+        <param name="operationMode">RETRIEVE</param>
+    </interceptor-ref>
+    <interceptor-ref name="defaultStack" />-->
+   				
+   			<result name = "success" type = "redirectAction">
+   				<param name = "actionName">user_detail</param>
+   				<param name = "id">${id}</param>
+   				<!--  <param name = "user">${user}</param>-->
+   			</result>
+   			<result name = "error">error.jsp</result>
+   		</action>
+   		
+   		<!-- ========================== -->
    		
    		<action name = "connexionUser"
    				class= "org.ocproject.actions.UserAction"
@@ -103,6 +125,8 @@
    			</result>
    			<result name = "error">error.jsp</result>
    		</action>
+   		
+   		<!-- ========================== -->
    		
    		<action name = "logout"
    				class= "org.ocproject.actions.UserAction"

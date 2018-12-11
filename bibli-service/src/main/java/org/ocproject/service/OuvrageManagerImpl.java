@@ -218,6 +218,98 @@ public class OuvrageManagerImpl extends AbstractManager {
 		return ouvrages;		
 	}
 	
+	@WebMethod
+	public List<Ouvrage> checkEmpruntsByUserId(int userId) {
+		List<Ouvrage> ouvrages = new ArrayList<Ouvrage>();
+		String dateEmprunt = null;
+		String dateRetour = null;
+		Boolean prolong = false;
+		int dayDao = 0;
+		int monthDao = 0;
+		int yearDao = 0;
+		int id = 0;
+		int id_emprunteur = 0;
+		int id_livre = 0;
+		ApplicationContext context
+        = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+		DaoFactory.getDaoDriver();
+		OuvrageDao ouvrageDao = getDaoFactory().getOuvrageDao();
+		ResultSet result = ouvrageDao.checkEmpruntsByUserId(context,userId);
+		
+		try {
+			while(result.next()) {
+				id = result.getInt("id");
+				dateEmprunt = result.getString("date_emprunt");
+				if(dateEmprunt!= null) {
+					dayDao = Integer.parseInt(dateEmprunt.substring(0, 2));
+					monthDao = Integer.parseInt(dateEmprunt.substring(2, 4));
+					yearDao = Integer.parseInt(dateEmprunt.substring(4, 8));
+					
+					String sMonth = null;String sDay = null;String sYear = null;
+					 
+					if(monthDao < 10) {
+						sMonth= "0"+((Integer)monthDao).toString();
+					}else {
+						sMonth= ((Integer)monthDao).toString();
+					}
+					
+					if(dayDao < 10) {
+						sDay= "0"+((Integer)dayDao).toString();
+					}else {
+						sDay= ((Integer)dayDao).toString();
+					}
+					
+					sYear= ((Integer)yearDao).toString();
+					
+					dateEmprunt = sDay+"/"+sMonth+"/"+sYear;
+					
+					//dateEmprunt = ((Integer)dayDao).toString()+"/"+((Integer)monthDao).toString()+"/"+((Integer)yearDao).toString();
+				}
+				dateRetour = result.getString("date_retour");
+				if( dateRetour != null) {
+					dayDao = Integer.parseInt(dateRetour.substring(0, 2));
+					monthDao = Integer.parseInt(dateRetour.substring(2, 4));
+					yearDao = Integer.parseInt(dateRetour.substring(4, 8));
+					
+					String sMonth = null;String sDay = null;String sYear = null;
+					 
+					if(monthDao < 10) {
+						sMonth= "0"+((Integer)monthDao).toString();
+					}else {
+						sMonth= ((Integer)monthDao).toString();
+					}
+					
+					if(dayDao < 10) {
+						sDay= "0"+((Integer)dayDao).toString();
+					}else {
+						sDay= ((Integer)dayDao).toString();
+					}
+					
+					sYear= ((Integer)yearDao).toString();
+					
+					dateRetour = sDay+"/"+sMonth+"/"+sYear;
+					
+					//dateRetour = ((Integer)dayDao).toString()+"/"+((Integer)monthDao).toString()+"/"+((Integer)yearDao).toString();
+				}
+				id_emprunteur = result.getInt("id_emprunteur");
+				prolong = result.getBoolean("prolongement");
+				id_livre = result.getInt("id_livre");
+				Ouvrage ouvrage = new Ouvrage();
+				ouvrage.setId(id);
+				ouvrage.setDate_emprunt(dateEmprunt);
+				ouvrage.setDate_retour(dateRetour);
+				ouvrage.setId_emprunteur(id_emprunteur);
+				ouvrage.setProlongement(prolong);
+				ouvrage.setId_livre(id_livre);
+				
+				ouvrages.add(ouvrage);
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return ouvrages;		
+	}
 	
 	public Ouvrage readInfoLivre(int id) {
 		ApplicationContext context

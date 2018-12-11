@@ -43,6 +43,7 @@ generated\reservation\ObjectFactory.class
 generated\ouvrage\OuvrageManagerImpl.class
 generated\reservation\package-info.class
 generated\livre\DetailLivreResponse.class
+generated\user\SetRappelOption.class
 generated\reservation\SelectAll.class
 generated\reservation\SelectByIdLivreResponse.class
 generated\reservation\ReserverResponse.class
@@ -63,3 +64,4 @@ generated\user\DetailUser.class
 generated\user\CreateUserResponse.class
 generated\reservation\Reserver.class
 generated\ouvrage\ReadInfoUser.class
+generated\user\SetRappelOptionResponse.class

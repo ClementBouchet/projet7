@@ -10,6 +10,7 @@ C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\ge
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\ouvrage\RendreResponse.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\reservation\SelectByIdUserResponse.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\livre\Livre.java
+C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\user\SetRappelOption.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\ouvrage\Prolonger.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\ouvrage\ReadInfoLivre.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\reservation\ManageCurrentDateResponse.java
@@ -45,6 +46,7 @@ C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\ge
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\reservation\AnnulerReservation.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\reservation\AnnulerReservationResponse.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\livre\DetailLivreResponse.java
+C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\user\SetRappelOptionResponse.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\reservation\ReserverResponse.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\user\UserManager.java
 C:\Users\Clément\eclipse-workspace\projet7\projet7\bibli-webapp\src\main\java\generated\user\UserManagerImpl.java

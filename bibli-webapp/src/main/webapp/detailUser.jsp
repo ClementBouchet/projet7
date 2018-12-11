@@ -69,6 +69,25 @@
 		</s:iterator>
 	</ul>
 	</p>
-	<s:a action = "index">Accueil</s:a></p>
+	<p>
+		Activer option de rappel par mail : 
+		<s:if test="user.rappel == false"> 
+		(Désactivé) - 
+		<s:a action = "setRappel">
+			<s:param name="rappel" value="true"></s:param>
+			<s:param name = "id" value = "user.id"></s:param>
+			Activer
+		</s:a>
+		</s:if>
+		<s:if test="user.rappel == true"> 
+		(Activé) - 
+		<s:a action = "setRappel">
+			<s:param name="rappel" value="false"></s:param>
+			<s:param name = "id" value = "user.id"></s:param>
+			Désactiver
+		</s:a>
+		</s:if>
+	</p>
+	<p><s:a action = "index">Accueil</s:a></p>
 </body>
 </html>

@@ -115,6 +115,27 @@ public class OuvrageDaoImpl implements OuvrageDao{
 		return result;
 	}
 	
+	@Override
+	public ResultSet checkEmpruntsByUserId(ApplicationContext context, int userId) {
+		ResultSet result = null;
+		Connection connexion;
+		PreparedStatement prepStmt;
+		daoFactory = context.getBean("daoFactory", DaoFactory.class);
+		String sql = "SELECT id, id_emprunteur, date_emprunt, date_retour, prolongement, id_livre FROM ouvrage WHERE id_emprunteur=?;";
+		
+		try {
+			connexion = daoFactory.getConnection();
+			prepStmt = connexion.prepareStatement(sql, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			prepStmt.setInt(1, userId);
+			result= prepStmt.executeQuery();						
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
 	public ResultSet readInfoLivre(ApplicationContext context,int id) {
 		ResultSet result = null;
 		Connection connexion;

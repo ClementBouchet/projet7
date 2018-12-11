@@ -6,6 +6,8 @@ public interface UserManager {
 	
 	public void modifUser(User user);
 	
+	public int setRappelOption(Boolean rappel, int id);
+	
 	public User connectUser(String pseudo);
 	
 	public User detailUser(String pseudo);
